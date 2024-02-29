@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+<body class="bg-blue-100 bg-opacity-50">
+    <div class="container">
+        <div class="grid grid-cols-2 min-h-screen items-center justify-center">
+            <!-- First Section -->
+            <div class="w-[488px] h-[609px] rounded-xl shadow-lg relative bg-blue-500 ml-[472px]">
+                <!-- Content for the first section goes here -->
+            </div>
+
+            <!-- Second Section -->
+            <div class="w-[488px] h-[609px] rounded-xl shadow-lg relative bg-white ml-44">
+                <div class="flex flex-col items-center justify-center mt-28">
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="mb-5">
+                            <img src="{% static 'images/logo.png' %}" alt="Logo" class="w-16 h-16">
+                        </div>
+                        <h5 class="text-2xl font-bold text-gray-600">Log in</h5>
+                        <form class="w-full">
+                            <div class="mb-4">
+                                <label for="Email Address" class="text-gray-600 font-bold text-base mt-9 flex flex-col">Email Address</label>
+                                <input type="text" name="Email Address" class="w-full  border-b border-gray-300 focus:outline-none focus:border-gray-300">
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="text-gray-600 pt-2 font-bold text-base flex flex-col">Password</label>
+                                <input type="password" name="password" class="w-full border-b border-gray-300 focus:outline-none focus:border-gray-300">
+                            </div>
+                            <div class="font-sans font-inter text-right mb-6">
+                                <div class="text-sky-600 hover:text-blue-700 text-xs">
+                                    <a href="#">Forgot Password?</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="bg-sky-800 text-white text-base py-[8px] px-32 rounded-lg hover:scale-95 ease-in cursor-pointer duration-200 font-sans font-inter">Log in</button>
+                        </form>
+                    </div>
+                    <div class="flex">
+                        <div></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
