@@ -3,13 +3,12 @@ module.exports = {
 	content: [
 		"**/templates/**/*.html"
 	],
-	theme: {
-        fontFamily: {
-			'sans': ['Inter', 'sans-serif'],
-			'serif': ['Inter', 'serif'],
-			'mono': ['Inter', 'monospace'],
-		  },      
-		extend: {},
+	theme: {      
+		extend: {
+			fontFamily: {
+				sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+			  },
+		},
 	},
 	plugins: [],
 }
