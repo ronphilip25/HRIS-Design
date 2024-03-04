@@ -34,7 +34,7 @@
             </svg>
           </div>
         </div>
-        <h2 class="text-md ml-2 mt-2 font-semibold">Attended</h2>
+        <h2 class="text-md ml-2 mt-2 font-normal">Attended</h2>
         <div class="font-inter ml-2 font-sans">
           <h3 class="leading-44 text-4xl font-bold text-gray-700">25</h3>
         </div>
@@ -54,7 +54,7 @@
             </svg>
           </div>
         </div>
-        <h2 class="text-md ml-2 mt-2 font-semibold">Attended</h2>
+        <h2 class="text-md ml-2 mt-2 font-normal">On Leave</h2>
         <div class="font-inter ml-2 font-sans">
           <h3 class="leading-44 text-4xl font-bold text-gray-700">03</h3>
         </div>
@@ -74,7 +74,7 @@
             </svg>
           </div>
         </div>
-        <h2 class="text-md ml-2 mt-2 font-semibold">Absent</h2>
+        <h2 class="text-md ml-2 mt-2 font-normal">Absent</h2>
         <div class="font-inter ml-2 font-sans">
           <h3 class="leading-44 text-4xl font-bold text-gray-700">01</h3>
         </div>
@@ -103,52 +103,129 @@
       <!-- Widget 5 -->
       <div class="col-span-2">
         <div class="">
-          <div class="rounded-lg shadow-lg">
-            <h2 class="mb-4 text-lg font-semibold">Attendance Overview</h2>
+          <div class="rounded-lg shadow-lg bg-white">
+            <div class="font-inter ml-2 font-sans p-4">
+                <h2 class="mb-4 text-base font-bold">Attendance Overview</h2>
+            </div>
             <!-- Chart Container -->
             <canvas id="attendanceChart" class="h-60 w-full"></canvas>
           </div>
         </div>
       </div>
       <!-- 6 -->
-      <div class="col-start-3">
-          <div class="rounded-lg shadow-lg h-full">
-            <h2 class="mb-4 text-lg font-semibold">Monthly</h2>
-            <!-- Chart Container -->
+      <div class="rounded-xl bg-white p-4 shadow-md col-span-1">
+        <div class="relative">
+          <div class="absolute right-0 top-0">
           </div>
-      </div>
-      <!-- 7 -->
-      <div class="">
-        <div class="">
-          <div class="rounded-lg shadow-lg">
-            <!-- Chart Container -->
-            <div class="grid gap-5">
-              <div class="line p-4 bg-green-100">foo</div>
-            <div class="line p-4 bg-green-100">foo</div>
-            <div class="line p-4 bg-green-100">foo</div>
-            <div class="line p-4 bg-green-100">foo</div>
-            </div>
+          <div class="font-inter ml-2 mt-1 font-sans">
+            <h5 class="text-base font-bold text-black">Monthly Tardiness and Absences</h5>
           </div>
         </div>
+        <div class="grid grid-cols-4 gap-3 font-sans font-inter text-xs font-bold text-gray-700 mt-3 ml-2 py-2">
+            <table class="table-fixed col-span-4">
+                <thead>
+                    <tr class="border-b border-black ">
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Tardiness</th>
+                        <th>Absences</th>
+                    </tr>
+                </thead>
+                <tbody class="[&_tr]:my-4">
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>   
+            </table>
+            <!-- <hr class="border col-span-4 border-gray-600"> -->
+        </div>
       </div>
-      <!-- 8 -->
-      <div class="col-span-2">
-        <div class="">
-          <div class="rounded-lg shadow-lg">
-            <h2 class="mb-4 text-lg font-semibold">Monthly</h2>
+      <!-- 7 -->
             <!-- Chart Container -->
-            <canvas id="attendanceChart" class="h-60 w-full"></canvas>
+            <div class="grid gap-3">
+                <div class="line p-4 bg-white rounded-lg text-lg font-normal flex justify-between">Acceptance Pending 
+                    <button class="">
+                        <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z" fill="#333333"/>
+                            </svg>                            
+                    </button>
+                </div>
+                <div class="line p-4 bg-white rounded-lg text-lg font-normal flex justify-between">Incomplete Profile
+                    <button>
+                        <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z" fill="#333333"/>
+                            </svg>                            
+                    </button>
+                </div>
+                <div class="line p-4 bg-white rounded-lg text-lg font-normal flex justify-between">Probationary Employees 
+                    <button>
+                        <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z" fill="#333333"/>
+                            </svg>                            
+                    </button>
+                </div>
+                <div class="line p-4 bg-white rounded-lg text-lg font-normal flex justify-between">Need to renew contract info 
+                    <button>
+                        <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z" fill="#333333"/>
+                            </svg>                            
+                    </button>
+                </div>
+                </div>
+      <!-- 8 -->
+      <div class="rounded-xl bg-white p-4 shadow-md col-span-2">
+        <div class="relative">
+          <div class="absolute right-0 top-0">
+          </div>
+          <div class="font-inter ml-2 mt-1 font-sans">
+            <h5 class="text-2xl font-bold text-black">Needs Approval</h5>
           </div>
         </div>
       </div>
       <!-- 9 -->
-      <div class="col-start-4">
-        <div class="">
-          <div class="rounded-lg shadow-lg">
-            <h2 class="mb-4 text-lg font-semibold">Monthly</h2>
-            <!-- Chart Container -->
-            <canvas id="attendanceChart" class="h-60 w-full"></canvas>
+      <div class="rounded-xl bg-white p-4 shadow-md col-span-1">
+        <div class="relative">
+          <div class="absolute right-0 top-0">
           </div>
+          <div class="font-inter ml-2 mt-1 font-sans">
+            <h5 class="text-2xl font-bold text-black">Platform Notice</h5>
+          </div>
+          <div class="font-inter font-sans">
+            <div class=" text-base font-normal flex justify-center">No Notice</div>
+        </div>
         </div>
       </div>
     </div>
