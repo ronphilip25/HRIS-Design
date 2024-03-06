@@ -7,3 +7,6 @@ def login(request):
 
 def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
+
+def attendance(request):
+    return render(request, 'attendance/attendance.html')
