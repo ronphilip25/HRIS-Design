@@ -129,84 +129,14 @@
                     </tr>
                 </thead>
                 <tbody class="font-sans text-xs font-normal font-inter">
+                  {% for dash in dashboard %}
                     <tr>
-                        <td>John Doe</td>
-                        <td class="px-4">IT</td>
-                        <td class="px-4">0</td>
-                        <td class="px-4">0</td>
+                        <td>{{ dash.name }}</td>
+                        <td class="px-4 text-center">{{ dash.department }}</td>
+                        <td class="px-4 text-center">{{ dash.tardiness }}</td>
+                        <td class="px-4 text-center">{{ dash.absences }}</td>
                     </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td class="px-4">HR</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">2</td>
-                    </tr>
-                    <tr>
-                        <td>Alice Johnson</td>
-                        <td class="px-4">Finance</td>
-                        <td class="px-4">3</td>
-                        <td class="px-4">1</td>
-                    </tr>
-                    <tr>
-                        <td>Bob Brown</td>
-                        <td class="px-4">Marketing</td>
-                        <td class="px-4">0</td>
-                        <td class="px-4">0</td>
-                    </tr>
-                    <tr>
-                        <td>Eva Garcia</td>
-                        <td class="px-4">Operations</td>
-                        <td class="px-4">2</td>
-                        <td class="px-4">3</td>
-                    </tr>
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>   
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>   
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>   
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>   
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>   
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>   
-                    <tr>
-                        <td>Michael Lee</td>
-                        <td class="px-4">Sales</td>
-                        <td class="px-4">1</td>
-                        <td class="px-4">1</td>
-                    </tr>      
+                  {% endfor %}    
                 </tbody>   
             </table>
         </div>
@@ -270,49 +200,23 @@
                     <tr>
                       <div>
                         <th class="px-0 py-2 text-left border-b border-gray-700">Name</th>
-                        <th class="px-3 py-2 text-left border-b border-gray-700">Department</th>
-                        <th class="px-3 py-2 text-left border-b border-gray-700">Type</th>
-                        <th class="px-3 py-2 text-left border-b border-gray-700">RequestDate</th>
-                        <th class="px-3 py-2 text-left border-b border-gray-700">Action</th>
+                        <th class="px-3 py-2 text-center border-b border-gray-700">Department</th>
+                        <th class="px-3 py-2 text-center border-b border-gray-700">Type</th>
+                        <th class="px-3 py-2 text-center border-b border-gray-700">RequestDate</th>
+                        <th class="px-3 py-2 text-center border-b border-gray-700">Action</th>
                       </div>
                     </tr>
                 </thead>
                 <tbody class="font-sans text-xs font-normal font-inter">
+                {% for ap in approvals %}
                     <tr>
-                        <td>Jane Nicole</td>
-                        <td class="px-3 py-2">Teaching</td>
-                        <td class="px-3 py-2">Leave</td>
-                        <td class="px-3 py-2">02/02/2024</td>
-                        <td class="text-blue-500"><a href="">Details</a></td>
+                        <td>{{ ap.name }}</td>
+                        <td class="px-3 py-2 text-center">{{ ap.department }}</td>
+                        <td class="px-3 py-2 text-center">{{ ap.type }}</td>
+                        <td class="px-3 py-2 text-center">{{ ap.request_date }}</td>
+                        <td class="text-blue-500 text-center"><a href="">Details</a></td>
                     </tr>
-                    <tr>
-                        <td>John Doe</td>
-                        <td class="px-3 py-2">IT Department</td>
-                        <td class="px-3 py-2">Leave</td>
-                        <td class="px-3 py-2">02/02/2024</td>
-                        <td class="text-blue-500"><a href="">Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>John Doe</td>
-                        <td class="px-3 py-2">IT Department</td>
-                        <td class="px-3 py-2">Leave</td>
-                        <td class="px-3 py-2">02/02/2024</td>
-                        <td class="text-blue-500"><a href="">Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>John Doe</td>
-                        <td class="px-3 py-2">IT Department</td>
-                        <td class="px-3 py-2">Leave</td>
-                        <td class="px-3 py-2">02/02/2024</td>
-                        <td class="text-blue-500"><a href="">Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>John Doe</td>
-                        <td class="px-3 py-2">IT Department</td>
-                        <td class="px-3 py-2">Leave</td>
-                        <td class="px-3 py-2">02/02/2024</td>
-                        <td class="text-blue-500"><a href="">Details</a></td>
-                    </tr>
+                {% endfor %}
                 </tbody>   
             </table>
         </div>
