@@ -1,0 +1,281 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Tailwind CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+    
+    <!-- Sidebar -->
+    <header class="header mx-10 flex items-center justify-between px-16 bg-white z-10 transition duration-500 border">
+        <a href="#" onclick="toggleSidebar(); flipBackImage(); toggleLogo()" class="block" style="margin-left: 250px;">
+            <div class="header_toggle"> <img src="{% static 'back.png' %}" alt="Back" class="back-image" id="backImage"></div>
+        </a>
+        <h5 class="inline-block">Dashboard</h5>
+       
+        <div class="profile flex items-end ">
+            <div class="header_img"> <img src="{% static 'profilepic.png' %}"  alt="">Christian Santos</div>
+            <img src="{% static 'up.png' %}" alt="Down Button Icon3" class="icon3">
+            <div>
+                <br>
+                <span class="profile-position">Admin</span> <!-- Display admin below name -->
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="sidebar bg-white h-full fixed left-19 pt-20 transition duration-300 border-r border-gray-300 w-190 pl-5">
+        <div class="logo" style="margin-left: 50px; margin-top: -66px">
+            <img src="{% static 'images/logo.png' %}" id="logoImg" class="block w-32 h-auto">
+            <img src="" id="logoHideImg" style="display: none;" class="block w-12 h-12">
+        </div>
+        <div class=" flex flex-col  ml-2 mt-2 p-12 " >
+            <div class=" flex">
+                <a href="#" onclick="highlightLink(this)"  class="flex ">
+                    <img src="{% static 'images/dashboard.png' %}" alt="Dashboard Icon" class="mr-4">
+                    Dashboard
+                </a>
+            </div>
+            <div class="flex">
+                <a href="#" onclick="highlightLink(this); toggleAttendanceFeatures(event, this.querySelector('.icon2'))" class="flex mt-10">
+                    <img src="{% static 'images/attendance.png' %}" alt="Attendance Icon" class="mr-4">
+                    Attendance
+                    <img src="{% static 'images/downbtn.png' %}" alt="Down Button Icon2" class="icon2">
+                </a>
+            </div>
+            <!-- Other sidebar links -->
+        <a href="#" onclick="highlightLink(this); toggleLeavesFeatures(event, this.querySelector('.icon2'))" class="block">
+            <span class="bullet"></span>
+            <img src="{% static 'images/Leaves.png' %}" alt="Leaves Icon" class="icon4">
+            <span class="text">Leaves</span>
+            <img src="{% static 'images/downbtn.png' %}" alt="Down Button Icon2" class="icon2">
+        </a>
+        <div id="LeavesFeatures" style="display: none;" class="features-container">
+            <ul class="features">
+                <li><a href="#">Daily</a></li>
+                <li><a href="#">Weekly/Monthly</a></li>
+                <li><a href="#">Schedule Settings</a></li>
+            </ul>
+        </div>
+        <a href="#" onclick="highlightLink(this); toggleTeamFeatures(event, this.querySelector('.icon2'))" class="block">
+            <span class="bullet"></span>
+            <img src="{% static 'images/Team.png' %}" alt="Team Icon" class="icon4">
+            <span class="text">Team</span>
+            <img src="{% static 'images/downbtn.png' %}" alt="Down Button Icon2" class="icon2">
+        </a>
+        <div id="TeamFeatures" style="display: none;" class="features-container">
+            <ul class="features">
+                <li><a href="#">Daily</a></li>
+                <li><a href="#">Weekly/Monthly</a></li>
+                <li><a href="#">Schedule Settings</a></li>
+            </ul>
+        </div>
+        <a href="#" onclick="highlightLink(this); toggleFilingFeatures(event, this.querySelector('.icon2'))" class="block">
+            <span class="bullet"></span>
+            <img src="{% static 'images/Filing.png' %}" alt="Filing Icon" class="icon4">
+            <span class="text">Filing</span>
+            <img src="{% static 'images/downbtn.png' %}" alt="Down Button Icon2" class="icon2">
+        </a>
+        <div id="FilingFeatures" style="display: none;" class="features-container">
+            <ul class="features">
+                <li><a href="#">Daily</a></li>
+                <li><a href="#">Weekly/Monthly</a></li>
+                <li><a href="#">Schedule Settings</a></li>
+            </ul>
+        </div>
+        <a href="#" onclick="highlightLink(this); toggleSettingsFeatures(event, this.querySelector('.icon2'))" class="block">
+            <span class="bullet"></span>
+            <img src="{% static 'images/Settings.png' %}" alt="Settings Icon" class="icon4">
+            <span class="text">Settings</span>
+            <img src="{% static 'images/downbtn.png' %}" alt="Down Button Icon2" class="icon2">
+        </a>
+        <div id="attendanceFeatures" style="display: none;" class="features-container">
+            <ul class="features">
+                <li><a href="#">Daily</a></li>
+                <li><a href="#">Weekly/Monthly</a></li>
+                <li><a href="#">Schedule Settings</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        <!-- Add other sidebar links and features containers here -->
+    </nav>
+
+    <!-- Page content -->
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function toggleSidebar() {
+         var sidebar = document.getElementById('sidebar');
+         var header = document.querySelector('.header');
+         var backImage = document.getElementById('backImage');
+         var headerText = document.querySelector('.header h5');
+     
+         sidebar.classList.toggle('closed');
+         header.classList.toggle('closed'); 
+     
+         if (!sidebar.classList.contains('closed')) {
+             headerText.style.display = 'none';
+         } else {
+             headerText.style.display = 'none';
+             document.getElementById('attendanceFeatures').style.display = 'none'; // Hide attendance feature container when sidebar is closed
+         } 
+     
+         $('.text').toggle(200);
+     
+         var logo = document.querySelector('.logo');
+         logo.classList.toggle('closed');
+         toggleDownButton();
+         toggleLogoWidth();
+     
+         if (sidebar.classList.contains('closed')) {
+             sidebar.style.left = '1%'; 
+             header.style.left = '4%'; 
+     
+         } else {
+             sidebar.style.left = '60px'; 
+             header.style.left = '230px'; 
+             headerText.style.display = 'block';
+         }
+     }
+     
+             function toggleLogo() {
+                 var logoImg = document.getElementById('logoImg');
+                 var logoHideImg = document.getElementById('logoHideImg');
+                 logoImg.style.display = (logoImg.style.display === 'none') ? 'block' : 'none';
+                 logoHideImg.style.display = (logoHideImg.style.display === 'none') ? 'block' : 'none';
+             }
+         
+             function toggleDownButton() {
+                 var downButtons = document.querySelectorAll('.icon2');
+                 downButtons.forEach(function(button) {
+                     button.style.display = (button.style.display === 'none') ? 'block' : 'none';
+                 });
+             }
+         
+             function toggleLogoWidth() {
+                 var logoImg = document.getElementById('logoImg');
+                 if (logoImg.style.width === '100px' || logoImg.style.width === '') {
+                     logoImg.style.width = '134px';
+                 } else {
+                     logoImg.style.width = '100px';
+                 }
+             }
+         
+             function highlightLink(link) {
+                 // Remove the 'active' class from all links
+                 var links = document.querySelectorAll('.sidebar a');
+                 links.forEach(function(link) {
+                     link.classList.remove('active');
+                 });
+         
+                 // Remove existing bullet points
+                 var bullets = document.querySelectorAll('.bullet');
+                 bullets.forEach(function(bullet) {
+                     bullet.remove();
+                 });
+         
+                 // Add the 'active' class to the clicked link
+                 link.classList.add('active');
+         
+                 // Create and append a bullet point to the clicked link if the sidebar is open
+                 var sidebar = document.getElementById('sidebar');
+                 if (!sidebar.classList.contains('closed')) {
+                     var bullet = document.createElement('span');
+                     bullet.textContent = '•';
+                     bullet.classList.add('bullet');
+                     link.insertBefore(bullet, link.firstChild);
+                 }
+                 var dashboardImage = document.querySelector('.sidebar a[href="#"]');
+                 if (link === dashboardImage) {
+                     document.querySelector('.icon').src = "{% static 'dashboardcolored.png' %}";
+                 } else {
+                     document.querySelector('.icon').src = "{% static 'dashboard.png' %}";
+                 }
+             }
+         
+             function flipBackImage() {
+                 var backImage = document.getElementById('backImage');
+                 if (backImage.classList.contains('flipped')) {
+                     // If already flipped, rotate back to original state
+                     backImage.style.transform = 'rotateY(0deg)';
+                     backImage.classList.remove('flipped');
+                 } else {
+                     // If not flipped, rotate 180 degrees around the Y-axis
+                     backImage.style.transform = 'rotateY(180deg)';
+                     backImage.classList.add('flipped');
+                 }
+             }
+         
+             function toggleDownButtonRotation(button) {
+                 button.classList.toggle('rotate'); 
+                 // Adjust sidebar position
+                 var sidebar = document.getElementById('sidebar');
+                 if (button.classList.contains('rotate')) {
+                     sidebar.style.left = '3%'; // Adjust the value as needed
+                 } else {
+                     sidebar.style.left = '3%'; // Adjust back to the original position
+                 }
+             }
+     
+             function toggleFeatures(event, containerId) {
+                 event.preventDefault(); 
+                 var featuresContainer = document.getElementById(containerId);
+                 var link = event.currentTarget; // Use currentTarget instead of target
+                 if (featuresContainer.style.display === "none") {
+                     featuresContainer.style.display = "block";
+                     link.classList.add('active');
+                 } else {
+                     featuresContainer.style.display = "none";
+                     link.classList.remove('active');
+                 }
+                 toggleBlueColor(link.querySelector('.icon')); // Toggle blue color for the icon
+             }
+         
+             function toggleBlueColor(icon) {
+                 icon.classList.toggle('blue');
+             }
+         
+             function toggleAttendanceFeatures(event, container) {
+                 toggleFeatures(event, "attendanceFeatures");
+                 toggleBlueColor(container.querySelector('.icon')); 
+             }
+         
+             function toggleLeavesFeatures(event, container) {
+                 toggleFeatures(event, "LeavesFeatures");
+                 toggleBlueColor(container.querySelector('.icon')); 
+             }
+         
+             function toggleTeamFeatures(event, container) {
+                 toggleFeatures(event, "TeamFeatures");
+                 toggleBlueColor(container.querySelector('.icon')); 
+             }
+         
+             function toggleFilingFeatures(event, container) {
+                 toggleFeatures(event, "FilingFeatures");
+                 toggleBlueColor(container.querySelector('.icon')); 
+             }
+         
+             function toggleSettingsFeatures(event, container) {
+                 toggleFeatures(event, "SettingsFeatures");
+                 toggleBlueColor(container.querySelector('.icon')); 
+             }
+     </script>
+ </body>
+ 
+ </html>
+
+{% endblock %}
+     
+      

@@ -1,0 +1,236 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+  </head>
+  <body class="bg-blue-100 bg-opacity-50">
+    <div class="container mx-auto ">
+      <div class="grid grid-cols-4 grid-rows-3 gap-4">
+        <!-- Widget 1 -->
+        <div class="h-28 rounded-2xl p-2 bg-white shadow-md mt-5">
+          <div class="relative">
+            <div class="flex right-0 top-0">
+            </div>
+          </div>
+          <h2 class="text-md ml-2 mt-2 font-normal">Active</h2>
+          <div class="relative inline-block w-full ">
+            <div
+              class="text-5xl font-inter font-bold text-black-700 py-[7px] flex">
+              20
+            </div>
+            <div class="absolute right-0 top-0 pt-2 mr-6">
+              <button>
+                <div class="hover:scale-125 ease-out duration-150">
+                  <svg width="13" height="22" viewBox="0 0 13 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z"
+                      fill="#333333" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="flex text-2xl font-inter font-bold text-black py-[7px] mt-8">
+            Active (12)
+
+          </div>
+        </div>
+        <!-- Widget 2 -->
+        <div class=" h-28 rounded-2xl p-2 bg-white shadow-md mt-5">
+          <div class="relative">
+            <div class="flex right-0 top-0">
+            </div>
+          </div>
+          <h2 class="text-md ml-2 mt-2 font-normal">Invited</h2>
+          <div class="relative inline-block w-full ">
+            <div
+              class="text-5xl font-inter font-bold text-black-700 py-[7px] flex">
+              02
+            </div>
+            <div class="absolute right-0 top-0 pt-2 mr-6">
+              <button>
+                <div class="hover:scale-125 ease-out duration-150">
+                  <svg width="13" height="22" viewBox="0 0 13 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z"
+                      fill="#333333" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Widget 3 -->
+        <div class=" h-28 rounded-2xl p-2 bg-white shadow-md mt-5">
+          <div class="relative">
+            <div class="flex right-0 top-0">
+            </div>
+          </div>
+          <h2 class="text-md ml-2 mt-2 font-normal">Resigned</h2>
+          <div class="relative inline-block w-full ">
+            <div
+              class="text-5xl font-inter font-bold text-black-700 py-[7px] flex">
+              00
+            </div>
+            <div class="absolute right-0 top-0 pt-2 mr-6">
+              <button>
+                <div class="hover:scale-125 ease-out duration-150">
+                  <svg width="13" height="22" viewBox="0 0 13 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z"
+                      fill="#333333" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Widget 4 -->
+        <div class=" h-28 rounded-2xl p-2 bg-white shadow-md mt-5">
+          <div class="relative">
+            <div class="flex right-0 top-0">
+            </div>
+          </div>
+          <h2 class="text-md ml-2 mt-2 font-normal">Deleted</h2>
+          <div class="relative inline-block w-full ">
+            <div
+              class="text-5xl font-inter font-bold text-black-700 py-[7px] flex">
+              00
+            </div>
+            <div class="absolute right-0 top-0 pt-2 mr-6">
+              <button>
+                <div class="hover:scale-125 ease-out duration-150">
+                  <svg width="13" height="22" viewBox="0 0 13 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0.600254 0.658517C0.295613 0.96325 0.124475 1.3765 0.124475 1.80739C0.124475 2.23828 0.295613 2.65153 0.600254 2.95627L8.644 11L0.600254 19.0438C0.304247 19.3502 0.140456 19.7607 0.144158 20.1868C0.147861 20.6129 0.31876 21.0204 0.620049 21.3217C0.921336 21.623 1.32891 21.7939 1.75498 21.7976C2.18105 21.8013 2.59152 21.6375 2.898 21.3415L12.0906 12.1489C12.3953 11.8442 12.5664 11.4309 12.5664 11C12.5664 10.5691 12.3953 10.1559 12.0906 9.85114L2.898 0.658517C2.59327 0.353877 2.18002 0.182739 1.74913 0.182739C1.31824 0.182739 0.904986 0.353877 0.600254 0.658517Z"
+                      fill="#333333" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="flex justify-end mt-10">
+              <button class="rounded-lg p-2 bg-blue-950 shadow-md text-white w-44">Invite Employees</button>
+            </div>
+          </div>
+        </div>
+        
+        <!---- Widget 5 -->
+        <div class="col-start-1 row-span-3 row-start-2 mt-[-230px]">
+          <div class="rounded-lg p-4 bg-white shadow-md h-[660px]">
+            <div class="relative">
+              <div class="flex text-lg font-bold">
+                <div class="border-b-2 border-blue-900 w-full h-auto">
+                  Geopro Global Solutions Inc.
+                </div>
+              </div>
+              <ul class="list-disc ml-8">
+                <li class="text-xl text-center justify-center mt-10">
+                  <a href="#human_resource">Human Resource (0)</a>
+                </li>
+                <li class="text-xl text-center justify-center mt-7">
+                  <a href="#admin_department">Admin Department (0)</a>
+                </li>
+                <ul class="list-disc ml-8">
+                  <li class="text-xl text-center justify-center mt-7">
+                    <a href="#marketing_department">Marketing Department (4)</a>
+                  </li>
+                  <li class="text-xl text-center justify-center mt-7">
+                    <a href="#it_department">IT Department (2)</a>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <!-- Widget 6 -->
+
+        <div class="col-start-2 col-span-4 row-start-2 mt-[-230px] h-auto">
+          <div class="rounded-lg p-4 bg-white shadow-md">
+            <div class="relative">
+              <input type="text" placeholder="Search..." class="rounded-lg border-2 border-black-900 p-2 w-80 pl-4 focus:outline-none focus:border-blue-500">
+              <div class="absolute inset-y-0 left-0 pl-72 flex items-center pointer-events-none">
+                <img src="{% static 'images/search.png' %}" alt="Search icon" class="h-6 w-6">
+              </div>
+            </div>
+            <div class="grid grid-cols-4 gap-3 font-sans font-inter text-xs font-bold text-gray-700 ml-2">
+              <table class="col-span-4 border-separate border-spacing-y-7 my-[-2rem]">
+                <thead>
+                  <tr>
+                    <th class="px-3 py-2 text-center border-b border-gray-700 text-sm">Name</th>
+                    <th class="px-3 py-2 text-center border-b border-gray-700">Status</th>
+                    <th class="px-3 py-2 text-center border-b border-gray-700">Contact Number</th>
+                    <th class="px-3 py-2 text-center border-b border-gray-700">Work Email</th>
+                    <th class="px-3 py-2 text-center border-b border-gray-700">Tier</th>
+                  </tr>
+                </thead>
+                <tbody class="font-sans text-xs font-normal font-inter">
+                  {% for active in active %}
+                  <tr>
+                    <td class="flex items-center px-4 text-xs font-bold">
+                      <img src="{% static 'images/profile.png' %}" alt="Profile icon" class="h-10 w-10 mr-2">
+                      {{ active.name }}
+                    </td>
+                    <td class="px-4 text-center text-purple-400">{{ active.status }}</td>
+                    <td class="px-4 text-center">{{ active.contact_number }}</td>
+                    <td class="px-4 text-center">{{ active.work_email }}</td>
+                    <td class="px-4 text-center">{{ active.tier }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+
+
+    </div>
+    <div class="flex items-center justify-between px-4 py-20 mr-44 mt-[-500px] sm:px-6 ">
+      <div class=" sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <div>
+          <p>
+          </p>
+        </div>
+        <div>
+          <nav class="inline-flex  shadow-sm gap-2" aria-label="Pagination">
+            <a href="#" class="relative inline-flex items-center rounded-lg bg-white px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+            <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm rounded-lg font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+            <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm rounded-lg bg-white font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+            <a href="#" class="relative hidden items-center px-4 py-2 text-sm rounded-lg bg-white font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+            <span class="relative inline-flex items-center px-4 py-2 text-sm rounded-lg bg-white font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
+            <a href="#" class="relative hidden items-center px-4 py-2 text-sm rounded-lg bg-white font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
+            <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm bg-white rounded-lg font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
+            <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm bg-white rounded-lg font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
+            <a href="#" class="relative inline-flex items-center rounded-r-md rounded-lg bg-white px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+              <span class="sr-only">Next</span>
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

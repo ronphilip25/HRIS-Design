@@ -199,3 +199,143 @@ def attendance(request):
         
     }
     return render(request, 'attendance/attendance.html', context=context)
+
+def sidebar(request):
+    return render(request, 'sidebar/sidebar.html')
+
+def invited(request):
+    context = {
+        "invited": [
+            {
+                "name": "John Andrew Arce",
+                "status": "Waiting",
+                "contact_number": "123",
+                "work_email": "ja@geoproglobal.com",
+                "departments": "",
+                "tier": "",
+                "join_date": "02/24/2024",
+                "action": "",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Waiting",
+                "contact_number": "123",
+                "work_email": "ja@geoproglobal.com",
+                "departments": "",
+                "tier": "",
+                "join_date": "02/24/2024",
+                "action": "",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "departments": "",
+                "tier": "",
+                "join_date": "02/24/2024",
+                "action": "",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "departments": "",
+                "tier": "",
+                "join_date": "02/24/2024",
+                "action": "",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "departments": "",
+                "tier": "",
+                "join_date": "02/24/2024",
+                "action": "",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "departments": "",
+                "tier": "",
+                "join_date": "02/24/2024",
+                "action": "",
+            },
+            
+             
+        ]
+    }
+    return render(request, 'invited/invited.html', context=context)
+
+def employee(request):
+    return render(request, 'employee/employee.html')
+
+def active(request):
+    context = {
+        "active": [
+            {
+                "name": "John Andrew Arce",
+                "status": "Waiting",
+                "contact_number": "123",
+                "work_email": "ja@geoproglobal.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Waiting",
+                "contact_number": "123",
+                "work_email": "ja@geoproglobal.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "tier": "Team Lead",
+            },
+            {
+                "name": "John Andrew Arce",
+                "status": "Active",
+                "contact_number": "123",
+                "work_email": "12esadaw@gmail.com",
+                "tier": "Team Lead",
+            },
+            
+             
+        ]
+    }
+    return render(request, 'active/active.html', context=context)
