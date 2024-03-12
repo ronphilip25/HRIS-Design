@@ -199,3 +199,23 @@ def attendance(request):
         
     }
     return render(request, 'attendance/attendance.html', context=context)
+
+
+ # ============== LEONARD VIEWS
+
+def AddWorkSchedule(request):
+    return render(request, "modals/AddWorkSchedule.html")
+
+def InviteEmployees(request):
+    return render(request, "modals/InviteEmployees.html")
+
+def EmployeeInformation(request):
+    return render(request, "modals/EmployeeInformation.html")
+
+def sample(request):
+    return render(request, "modals/sample.html")
+
+def home(request):
+    #return render(request, "home.html")
+
+    return render(request, "layout.html")

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <!-- Overlay -->
+    <div class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-10" id="overlay"></div>
+
+    <!-- Modal -->
+    <div class="w-full max-w-3xl mx-auto h-70vh fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-5 px-12 rounded-md shadow-md z-20" id="modal">
+        <h2 class="text-2xl font-bold mb-4 pb-6 border-b border-blue-300 flex justify-between items-center">
+            Invite Employees
+            <a href="#">
+                <div id="exitBtn" class="w-6 h-6 flex justify-center items-center border border-red-400 rounded-full text-red-500 text-xs">&#x2715;</div>
+            </a>
+        </h2>
+        
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <div class="grid grid-cols-3 gap-2">
+                <div class="col-start-1 col-end-1">
+                    <label for="First-Name" class="text-sm font-bold block text-black">First Name <span class="text-red-500">*</span></label> 
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter First Name" class="border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-3 pr-10 text-sm focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none" required>
+                </div>
+            
+                <div class="col-start-2 col-end-2">
+                    <label for="Middle-Name" class="text-sm font-bold block text-black">Middle Name</label> 
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter Middle Name" class="border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-3 pr-10 text-sm focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none">
+                </div>
+            
+                <div class="col-start-3 col-end-3">
+                    <label for="Last-Name" class="text-sm font-bold block text-black">Last Name <span class="text-red-500">*</span></label> 
+                    <input type="text" id="Last-Name" name="Last-Name" placeholder="Enter Last Name" class="border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-3 pr-10 text-sm focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none" required>
+                </div>
+            </div>
+            
+            
+            
+            <div class="grid grid-cols-3 gap-4 mt-4">
+                <div class="col-span-2">
+                    <label for="Work-Email-Address" class="text-sm font-bold block text-black">Work Email Address <span class="text-red-500">*</span></label> 
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter Work Email Address" class="border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-3 pr-10 text-sm focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full" required>
+                </div>
+            
+                <div class="col-start-3 mb-4">
+                    <label for="Contact-Number" class="text-sm font-bold block text-black">Contact Number <span class="text-red-500">*</span></label> 
+                        <div class="grid grid-cols-4 gap-4">
+                                <div class="col-start-1 col-end-1">
+                                    <input type="text" value="+63" class="text-gray-500 text-sm h-8 border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-2 focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none bg-gray-200 w-12" disabled>
+                                </div>
+                                <div class="col-start-2 col-span-4 ml-1">
+                                    <input type="text" id="Contact-Number" name="last-name" placeholder="Enter Contact Number" class="border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-1 text-sm focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none w-full" required>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            
+
+            <div class="mb-4 flex">
+                <div class="flex-1 mr-4">
+                    <label for="Join-Date" class="text-sm font-bold block text-black">Join Date <span class="text-red-500">*</span></label> 
+                    <input type="text" id="first-name" name="first-name" placeholder="mm/dd/yyyy" class="border-2 mt-1 rounded-md border-gray-300 shadow-sm py-1 pl-3 pr-10 text-sm focus:ring focus:ring-blue-200 focus:ring-opacity-50 hover:border-blue-600 focus:border-blue-600 focus:outline-none" required>
+                </div>
+            
+                <div class="flex-1 mr-4">
+                    <label for="Office" class="text-sm font-bold block text-black">Office</label> 
+                    <div class="pt-1 relative">
+                        <select class="text-sm block w-full rounded-md border-2 border-gray-300 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none">
+                            <option  disabled selected value="">Select Office</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                            <!-- Heroicon name: solid/chevron-down -->
+                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="flex-1">
+                    <label for="Last-Name" class="text-sm font-bold block text-black">Department</label> 
+                    <div class="pt-1 relative">
+                        <select class="text-sm block w-full rounded-md border-2 border-gray-300 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none">
+                            <option  disabled selected value="">Select Office</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                            <!-- Heroicon name: solid/chevron-down -->
+                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 pb-6 border-b border-blue-300">
+                <div class="col-span-2">
+                    <label for="Work-Schedule" class="text-sm font-bold block text-black">Work Schedule</label> 
+                    <div class="pt-1 relative">
+                        <select class="text-sm block w-full rounded-md border-2 border-gray-300 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none">
+                            <option  disabled selected value="">Default Schedule</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                            <!-- Heroicon name: solid/chevron-down -->
+                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-start-3">
+                    <label for="Middle-Name" class="text-sm font-bold block text-black">Tier</label> 
+                    <div class="pt-1 relative">
+                        <select class="w-full text-sm block rounded-md border-2 border-gray-300 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none">
+                            <option  disabled selected value="">Select Tier</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                            <!-- Heroicon name: solid/chevron-down -->
+                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="flex items-center justify-between">
+
+                <div class="flex items-center">
+                    <p class="text-lg text-red-500 mr-1">&nbsp; *</p>
+                    <p class="text-xs text-red-500 font-inter">Required Fields</p>
+                </div>
+
+                <div class="mt-6 flex justify-end"> 
+                    <button type="button" class="border-2 py-2 px-4 rounded-md mr-4 hover:bg-gray-300 focus:outline-none focus:gray-red-300" id="CancelBtn">Cancel</button>
+                    <button type="submit" class="w-20 bg-blue-700 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 font-inter">Invite</button>
+                </div>
+
+            </div>
+            
+
+        </form>
+
+
+    </div>
+    
+    
+    <!-- Button to open modal -->
+    <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 z-0 relative" id="openModal">Open Popup Form</button>
+
+    <!-- JavaScript to handle modal -->
+    <script>
+        function handleButtonClick(clickedButton) {
+            const buttons = document.querySelectorAll('.my-button');
+    
+            buttons.forEach(button => {
+                if (button === clickedButton) {
+                    button.classList.add('text-blue-500', 'border-blue-500');
+                    button.classList.remove('text-gray-500', 'border-gray-300');
+                } else {
+                    button.classList.remove('text-blue-500', 'border-blue-500');
+                    button.classList.add('text-gray-500', 'border-gray-300');
+                }
+            });
+        }
+
+
+        function handleInputFocus() {
+            document.getElementById('title').classList.add('focus:border-blue-500');
+            document.getElementById('title').classList.remove('border-gray-300');
+        }
+        
+        function handleInputBlur() {
+            document.getElementById('title').classList.add('border-gray-300');
+            document.getElementById('title').classList.remove('focus:border-blue-500');
+        }
+        function closeModal() {
+            const overlay = document.getElementById('overlay');
+            const modal = document.getElementById('modal');
+            const openModalBtn = document.getElementById('openModal');
+    
+            overlay.classList.add('hidden');
+            modal.classList.add('hidden');
+            openModalBtn.classList.remove('opacity-0');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.getElementById('overlay');
+            const modal = document.getElementById('modal');
+            const openModalBtn = document.getElementById('openModal');
+            const cancelBtn = document.querySelector('.cancel-btn');
+    
+            openModalBtn.addEventListener('click', function() {
+                overlay.classList.remove('hidden');
+                modal.classList.remove('hidden');
+                openModalBtn.classList.add('opacity-0');
+            });
+    
+            overlay.addEventListener('click', function() {
+                closeModal();
+            });
+    
+            CancelBtn.addEventListener('click', function() {
+                closeModal();
+            });
+            exitBtn.addEventListener('click', function() {
+                closeModal();
+            });
+        });
+        
+    </script>
+</div>
+
+</div>
+

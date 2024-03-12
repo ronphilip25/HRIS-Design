@@ -1,0 +1,440 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <!-- Overlay -->
+    <div class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-10" id="overlay"></div>
+
+    <!-- Modal -->
+    <div class="w-full max-w-5xl mx-auto h-auto fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-12 rounded-md shadow-md z-20" id="modal">
+        <h2 class="text-2xl font-bold border-b border-blue-300 pt-4 pb-8 flex justify-between items-center">
+            Employee Information
+                <a href="#">
+                    <div id="exitBtn" class="w-6 h-6 flex justify-center items-center border border-red-400 rounded-full text-red-500 text-xs">&#x2715;</div>
+                </a>
+        </h2>
+        
+        <form action="#" method="POST">
+            {% csrf_token %}
+
+            <div class="grid grid-cols-3 grid-rows-4">
+                
+                <div class="grid col-start-1 col-end-2 row-start-1 row-end-2 pt-6 relative">
+                    <!-- Container for image and dot -->
+                    <div class="inline-flex relative">
+                        <!-- Profile picture -->
+                        <img class="w-16 h-16 rounded-full" src="{% static 'profile.png' %}" style="border-radius: 50%;">
+                        <!-- Green dot -->
+                        <div class="absolute top-12 left-12 mb-1 w-4 h-4 border-white-900 border-2 bg-green-500 rounded-full"></div>
+                    </div>
+                    <!-- Profile information -->
+                    <div class="col-start-2 col-end-3 row-start-1 row-end-2"> <!-- Added ml-2 for margin-left -->
+                        <div class="font-bold text-lg mb-1 pt-2">Patricia Kim Rosauro</div> <!-- Increased font size to 'text-lg' -->
+                        <p class="text-gray-700 text-base">IT Department</p>   
+                    </div>
+                </div>
+                
+
+                <div class="grid col-start-1 col-end-2 row-start-2 row-end-3">
+                        <div class="flex items-center">
+                            <button type="button" id="profileButton" class=" font-bold flex items-center text-lg text-blue-800 py-3 pl-9 pr-32 rounded-lg bg-blue-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" class="mr-2">
+                                    <path fill="currentColor" fill-rule="evenodd" d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-lg ml-6">Profile</span>
+                            </button>
+                        </div>
+                    
+                        <div class="flex items-center">
+                            <button type="button" id="contractButton" class="flex items-center text-lg py-3 pl-9 pr-20 rounded-lg border-3 hover:bg-blue-200 focus:border-blue-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"><rect width="32" height="40" x="8" y="4" stroke-linejoin="round" rx="2"/><path stroke-linejoin="round" d="M16 4h9v16l-4.5-4l-4.5 4z"/><path d="M16 28h10m-10 6h16"/></g></svg>
+                                <span class="text-lg ml-7">Contract Info</span>
+                            </button>
+                        </div>
+                        
+                </div>
+
+                  
+                            
+                <div class="border-l border-blue-300 grid col-span-3 row-start-1 row-end-1 pt-6 pl-4">
+                    
+
+                    <div class="flex items-center justify-between bg-blue-100 rounded-lg px-4 h-10">
+                        <div>
+                            <button type="button" id="jobInfo" onclick="handleButtonClick(this)" class="px-5 bg-blue-100 font-medium text-xs text-center border-b-2 my-button pb-2 text-blue-500 border-blue-700">Job Info</button>
+                        </div>
+                        <div>
+                            <button type="button" id="basicInfo"  onclick="handleButtonClick(this)" class=" text-gray-700 px-5 bg-blue-100 font-medium text-xs text-center border-b-2 my-button pb-2">Basic Info</button>     
+                        </div>
+                        <div>
+                            <button type="button" id="education"  onclick="handleButtonClick(this)" class=" text-gray-700 px-5 bg-blue-100 font-medium text-xs text-center border-b-2 my-button pb-2">Education</button>     
+                        </div>
+                        <div>
+                            <button type="button" id="workExperience"  onclick="handleButtonClick(this)" class=" text-gray-700 px-5 bg-blue-100 font-medium text-xs text-center border-b-2 my-button pb-2">Work Experience/Certificate</button>     
+                        </div>
+
+                    </div>
+
+                    <div id="default-tab-content">
+                        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="jobInfo-tab">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        </div>
+                        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        </div>
+                        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        </div>
+                        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+
+                        <label class="pt-4 text-lg font-bold block text-black">Job Information</label>
+                        <div class="flex items-center">
+                            <button type="button" id="editBtn" class="border-2 py-2 px-8 rounded-lg border-blue-600 focus:outline-none hover:bg-blue-200 focus:gray-red-300">Edit</button>
+                        </div>       
+                    </div>
+                </div>
+
+
+                <div class="grid col-span-3 border-l border-blue-300 row-start-2 row-end-2 pl-4">
+                    <div class="flex justify-between mt-5">
+                        <div class="flex-1 mr-2">
+                            <label for="Join-Date" class="text-sm font-bold block text-black mb-1">Employment Type</label> 
+                            <div class="pt-1 relative">
+                                <select id="employmentType" class=" h-9 bg-gray-200 text-sm block w-full rounded-md border-2 border-gray-400 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none" disabled>
+                                    <option  disabled selected value="">Regular</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                    <!-- Heroicon name: solid/chevron-down -->
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                            <label for="Join-Date" class="text-sm font-bold block text-black mb-1">Status</label> 
+                            
+                            <div class="pt-1 relative">
+                                <select id="status" class="h-9 bg-green-100 text-sm block w-full rounded-md border-2 border-green-300 shadow-sm py-1 pl-3 pr-10 appearance-none focus:outline-none">
+                                    <option value="option2">Active</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex flex-col justify-center items-center text-gray-400 mr-1 mt-1">
+                                    <!-- Up arrow -->
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M6.293 9.707a1 1 0 001.414 1.414L10 8.414l2.293 2.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 000 1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                    <!-- Down arrow -->
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M13.707 10.293a1 1 0 00-1.414-1.414L10 11.586 7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            
+
+                        </div>  
+                        
+                    </div>
+
+                    <div class="flex justify-between mt-5">
+                        <div class="flex-1 mr-2">
+                            <label for="Join-Date" class="text-sm font-bold block text-black mb-1">Office</label> 
+                            <div class="pt-1 relative">
+                                <select id="office" class=" h-9 bg-gray-200 text-sm block w-full rounded-md border-2 border-gray-400 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none" disabled>
+                                    <option value="option2">Geopro</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                    <!-- Heroicon name: solid/chevron-down -->
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <label class="text-sm font-bold block text-black mb-1">Department</label>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="myCheckbox" name="myCheckbox">
+                                    <label class="text-xs block pl-2 text-black ml-1" for="myCheckbox">Head</label>
+                                </div>
+                            </div>
+                            <div class="pt-1 relative">
+                                <select id="department" class=" h-9 bg-gray-200 text-sm block w-full rounded-md border-2 border-gray-400 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none" disabled>
+                                    <option value="option2">IT Department</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                    <!-- Heroicon name: solid/chevron-down -->
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+            
+                </div>
+
+                <div class="grid col-start-2 col-end-4 row-start-3 row-end-3 pl-4 border-l border-blue-300">
+                    <div class="flex justify-between mt-5">
+                        <div class="flex-1 mr-2">
+                            <label for="Join-Date" class="text-sm font-bold block text-black mb-1">Tier</label> 
+                            <div class="pt-1 relative">
+                                <select id="tier" class=" h-9 bg-gray-200 text-sm block w-full rounded-md border-2 border-gray-400 shadow-sm py-1 pl-3 pr-10 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none" disabled>
+                                    <option  disabled selected value="">Select Role</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                    <!-- Heroicon name: solid/chevron-down -->
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 00-1.414 1.414l6 6a1 1 0 001.414 0l6-6a1 1 0 10-1.414-1.414L10 12.586z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1">
+                            <label for="Join-Date" class="text-sm font-bold block text-black mb-1">Join Date</label> 
+                            <div class="pt-1 relative">
+                                <input type="date" id="joinDate" name="calendar" class=" h-9 bg-gray-200 text-sm block w-full rounded-md border-2 border-gray-400 shadow-sm py-1 pl-3 pr-1 appearance-none hover:border-blue-600 focus:border-blue-600 focus:outline-none" onclick="showCalendar()" disabled>
+                                <span class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <!-- This is where the old icon used to be -->
+                                </span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <div class="flex-1 mt-6">
+                        <label for="Join-Date" class="text-sm font-bold block text-black mb-3 ">Work Schedule</label> 
+                        <div class="pt-1 relative">
+                            <div class="border-2 h-9 px-5 rounded-lg border-gray-300 ">
+
+                                <div class="flex">
+                                    <div class="font-bold pt-1">
+                                        Day Shift 
+                                    </div>
+                                    <div class="ml-auto pt-1">
+                                        (Mon, Tue, Wed, Thu, Fri)
+                                    </div>
+                                    <div class="font-bold ml-auto pt-1">
+                                        09:00-18:00 (08 hrs 00 min per day)
+                                    </div>
+                                </div>      
+                            </div>
+                        </div>
+                    </div> 
+                    
+                </div>
+
+                <div class="col-start-2 col-end-4 row-start-4 row-end-4 pl-4 border-l border-blue-300">
+                    <div class="mt-12 justify-end flex hidden" id="buttonContainer">
+                        <button type="button" id="CancelBtn" class="py-2 border-2 px-6 rounded-md mr-4 hover:bg-gray-300 focus:outline-none focus:gray-red-300">Cancel</button>
+                        <button type="submit" class="px-8 bg-blue-700 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 font-inter">Invite</button>
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+        </form>
+
+
+    </div>
+    
+    
+    <!-- Button to open modal -->
+    <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 z-0 relative" id="openModal">Open Popup Form</button>
+
+    <!-- JavaScript to handle modal -->
+    <script>
+
+        function handleContractButtonClick() {
+            const contractButton = document.getElementById('contractButton');
+            const profileButton = document.getElementById('profileButton');
+    
+            contractButton.classList.add('bg-blue-100', 'font-bold', 'text-blue-800');
+            profileButton.classList.remove('bg-blue-100', 'font-bold', 'text-blue-800');
+        }
+
+        function handleProfileButtonClick() {
+            const contractButton = document.getElementById('contractButton');
+            const profileButton = document.getElementById('profileButton');
+    
+            contractButton.classList.remove('bg-blue-100', 'font-bold', 'text-blue-800');
+            profileButton.classList.add('bg-blue-100', 'font-bold', 'text-blue-800');
+        }
+
+        function handleButtonClick(clickedButton) {
+            const buttons = document.querySelectorAll('.my-button');
+    
+            buttons.forEach(button => {
+                if (button === clickedButton) {
+                    button.classList.add('text-blue-500', 'border-blue-700');
+                    button.classList.remove('border-gray-300');
+                } else {
+                    button.classList.remove('text-blue-500', 'border-blue-700');
+                }
+            });
+        }
+    
+        function showCalendar() {
+            document.getElementById('calendar').click();
+        }
+    
+        function handleInputFocus() {
+            document.getElementById('title').classList.add('focus:border-blue-500');
+            document.getElementById('title').classList.remove('border-gray-300');
+        }
+        
+        function handleInputBlur() {
+            document.getElementById('title').classList.add('border-gray-300');
+            document.getElementById('title').classList.remove('focus:border-blue-500');
+        }
+    
+        function closeModal() {
+            const overlay = document.getElementById('overlay');
+            const modal = document.getElementById('modal');
+            const openModalBtn = document.getElementById('openModal');
+    
+            overlay.classList.add('hidden');
+            modal.classList.add('hidden');
+            openModalBtn.classList.remove('opacity-0');
+        }
+    
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.getElementById('overlay');
+            const modal = document.getElementById('modal');
+            const openModalBtn = document.getElementById('openModal');
+            const editBtn = document.getElementById('editBtn');
+            
+            const contractButton = document.getElementById('contractButton');
+            const profileButton = document.getElementById('profileButton');
+
+            contractButton.addEventListener('click', function() {
+            handleContractButtonClick();
+            });
+
+            profileButton.addEventListener('click', function() {
+            handleProfileButtonClick();
+            });
+    
+            openModalBtn.addEventListener('click', function() {
+                overlay.classList.remove('hidden');
+                modal.classList.remove('hidden');
+                openModalBtn.classList.add('opacity-0');
+            });
+    
+            overlay.addEventListener('click', function() {
+                closeModal();
+            });
+            CancelBtn.addEventListener('click', function() {
+                closeModal();
+            });
+    
+            exitBtn.addEventListener('click', function() {
+                closeModal();
+            });
+            profileButton.addEventListener('click', function() {
+                handleProfileButtonClick(profileButton);
+            });
+    
+            contractButton.addEventListener('click', function() {
+                handleContractButtonClick(contractButton);
+            });
+
+    
+            // Initially disable all inputs except the 2nd input
+            const inputs = document.querySelectorAll('input, select');
+            inputs.forEach((input, index) => {
+                if (index === 2 ) {
+                    input.disabled = false; // Enable the 2nd input
+                } else {
+                    input.disabled = true; // Disable all other inputs
+                }
+            });
+    
+            // Event listener for the Edit button
+            editBtn.addEventListener('click', function() {
+                handleButtonClick(this); // Call the function to enable all inputs
+
+                buttonContainer.classList.remove('hidden'); // Show the buttons
+
+                this.style.display = 'none'; // Hide the edit button
+
+                            // Ensure that the "Job Info" button remains selected
+                const jobInfoButton = document.getElementById('jobInfo');
+                jobInfoButton.classList.add('text-blue-500', 'border-blue-700');
+                jobInfoButton.classList.remove('border-gray-300');
+                    
+         
+                  // Enable all input fields
+                 const inputs = document.querySelectorAll('input, select');
+                 inputs.forEach(input => {
+                 input.disabled = false;
+
+                 const employmentType = document.getElementById('employmentType');
+                 const office = document.getElementById('office');
+                 const department = document.getElementById('department');
+                 const tier = document.getElementById('tier');
+                 const joinDate = document.getElementById('joinDate');
+
+
+                 // Change its background color to white
+                 employmentType.classList.remove('bg-gray-200'); // Remove default gray background color
+                 employmentType.classList.add('bg-white'); // Add white background color
+                 
+                 office.classList.remove('bg-gray-200'); // Remove default gray background color
+                 office.classList.add('bg-white'); // Add white background color
+
+                 department.classList.remove('bg-gray-200'); // Remove default gray background color
+                 department.classList.add('bg-white'); // Add white background color
+
+                 tier.classList.remove('bg-gray-200'); // Remove default gray background color
+                 tier.classList.add('bg-white'); // Add white background color
+
+                 joinDate.classList.remove('bg-gray-200'); // Remove default gray background color
+                 joinDate.classList.add('bg-white'); // Add white background color
+
+                    });
+      
+            });
+            
+        });
+    </script>
+    
+    
+</div>
+
+</div>
+
