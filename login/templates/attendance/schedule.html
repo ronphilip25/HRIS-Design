@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body class=" bg-blue-100 bg-opacity-50">
+    <div class="flex flex-col items-center justify-center py-9 mx-6">
+        <div class="flex flex-col rounded-2xl shadow-2xl bg-white w-full h-auto py-8 px-8">
+            <div class="text-normal font-bold font-sans font-inter text-blue-500 relative right-5 bottom-3">
+                Note:
+            </div>
+            <div>
+                <ul class=" list-disc text-sm text-blue-500 font-sans font-inter font-normal">
+                    <li>
+                        Employees must select “Overtime / Rest / Holiday / Night Shift” in Submit Work Schedule. In order to include the relevant work in salary.
+                    </li>
+                    <li>
+                        If employees apply for “Overtime / Rest / Holiday / Night Shift” through a different work schedule, it will not be reflected in employee salary.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" grid grid-cols-3 grid-rows-4">
+
+    </div>
+</body>
+</html>

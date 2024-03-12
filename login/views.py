@@ -130,7 +130,9 @@ def attendance(request):
     threshold = request.GET.get("threshold")
     if threshold == "weekly":
         return render(request, 'attendance/weekly.html')
-
+    # if threshold == "monthly":
+    #     return render(request, 'attendance/monthly.html')
+        
     context = {
         "attendance": [
             {
@@ -195,7 +197,136 @@ def attendance(request):
             {
                 "name": "Patricia Kim Rosauro",
             }
-        ]
+        ],
+        
         
     }
     return render(request, 'attendance/attendance.html', context=context)
+
+def monthly(request):
+    context = {
+        "monthly": [
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+            {
+                "department": "IT",
+                "work_schedule": "Day shift",
+                "work_hour": "8:00am - 6:00pm",
+                "overtime": "-",
+                "holiday_work": "-",
+                "holiday_overtime": "-",
+                "leave": "-",
+                "tardiness": "-",
+                "under_time": "-",
+                "absences": "-",
+                "custom_policy": "-",
+            },
+        ],
+    }
+    
+    return render(request, 'attendance/monthly.html', context=context)
+
+def schedule(request):
+    return render(request, 'attendance/schedule.html')
