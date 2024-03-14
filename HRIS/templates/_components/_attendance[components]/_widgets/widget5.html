@@ -1,0 +1,27 @@
+<div class="flex justify-between items-center mt-3 ml-3">
+    <h5 class="leading-44 text-2xl font-bold text-gray-700">Attendance</h5>  
+    <div class="rounded-md py-2 px-2 bg-blue-800 cursor-pointer mr-3">
+        <div class="text-white text-xs px-5 py-1 font-sans font-inter">
+          <button>
+            Download Excel
+          </button>
+        </div>
+    </div>    
+</div>
+<div class="flex flex-col justify-evenly item-end font-sans font-inter text-gray-700 mt-3 ml-2 py-2">
+  {% for users in user %}
+  <div class="text-base font-bold">
+    {{ users.name }}
+  </div>
+  {% endfor %}
+  <div class="grid grid-cols-2 grid-rows-4 [&_div:nth-child(even)]:text-right mt-5">
+      <div class="border-b border-gray-200 py-1 mb-3 text-gray-400">Department</div>
+      <div class="border-b border-gray-200 py-1 mb-3 text-gray-500 text-sm font-bold">IT Department</div>
+      <div class="border-b border-gray-200 py-1 mb-3 text-gray-400">Work Schedule</div>
+      <div class="border-b border-gray-200 py-1 mb-3 text-gray-500 text-sm font-bold">Mon, Tue, Wed, Thu, Fri(9:00-18:00)</div>
+      <div class="border-b border-gray-200 py-1 mb-3 text-gray-400">Period</div>
+      <div class="border-b border-gray-200 py-1 mb-3 text-gray-500 text-sm font-bold">01/29/2024 Mon - 02/04/2024 Sun</div>
+      <div class="border-b border-gray-200 py-1 text-gray-400">Cumulative working hours</div>
+      <div class="border-b border-gray-200 py-1 text-gray-500 text-sm font-bold"> - </div>
+  </div>
+</div>  

@@ -1,0 +1,35 @@
+<div class="grid grid-cols-8 font-sans font-inter text-base font-bold text-gray-700 mt-10 ml-1 py-2">
+    <table class="col-span-8 border-separate border-gray-200 border-spacing-y-[0.5rem] my-[-2rem]">
+        <colgroup>
+          <col span="3" class="text-center">
+        </colgroup>
+        <thead>
+            <tr>
+              <div>
+                <th class="px-0 py-2 text-left border-b border-gray-300">Date</th>
+                <th class="px-2 py-2 text-left border-b border-gray-300">Day</th>
+                <th class="px-3 py-2 border-b border-gray-300 text-center">Time in/ Time-out</th>
+                <th class="px-3 py-2 border-b border-gray-300 text-center">Break</th>
+                <th class="px-3 py-2 border-b border-gray-300 text-center">Total working hrs</th>
+                <th class="px-3 py-2 border-b border-gray-300 text-center">Overtime</th>
+                <th class="px-3 py-2 border-b border-gray-300 text-center">Notes</th>
+                <th class="px-3 py-2 border-b border-gray-300 text-center">Action</th>
+              </div>
+            </tr>
+        </thead>
+        <tbody class="font-sans text-xs font-normal font-inter">
+          {% for at in attendance %}
+            <tr>
+                <td>{{ at.date }}</td>
+                <td class="px-3 py-2">{{ at.day }}</td>
+                <td class="px-3 py-2 text-center">{{ at.in_out }}</td>
+                <td class="px-3 py-2 text-center">{{ at.break }}</td>
+                <td class="px-3 py-2 text-center">{{ at.total_working_hrs }}</td>
+                <td class="px-3 py-2 text-center">{{ at.overtime }}</td>
+                <td class="px-3 py-2 text-center">{{ at.notes }}</td>
+                <td class="text-blue-500 text-center">{{ at.action }}<a href="">Edit</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>   
+    </table>
+</div>

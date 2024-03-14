@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% include 'header.html' %}
+
+<title>{% block title %} Dashboard | Geopro {% endblock %}</title>
+
+{% block content %}
+  <!-- Widgets -->
+  <div class="container mx-auto py-[16px]">
+    <div class="grid grid-cols-4 gap-4">
+      <!-- Widget 1 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets1.html' %}
+  
+      <!-- Widget 2 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets2.html' %}
+  
+      <!-- Widget 3 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets3.html' %}
+  
+      <!-- Widget 4 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets4.html' %}
+  
+      <!-- Widget 5 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets5.html' %}
+
+      <!-- 6 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets6.html' %}
+
+      <!-- 7 -->
+            <!-- Chart Container -->
+            {% include '_components/_dashboard[components]/_dwidgets/dwidgets7.html' %}
+
+      <!-- 8 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets8.html' %}
+
+      <!-- 9 -->
+      {% include '_components/_dashboard[components]/_dwidgets/dwidgets9.html' %}
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- JavaScript for Chart -->
+  
+<script src="{% static 'js/script.js' %}"></script>
+
+{% endblock %}
