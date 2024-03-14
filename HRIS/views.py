@@ -333,3 +333,6 @@ def monthly(request):
 
 def schedule(request):
     return render(request, '_components/_attendance[components]/schedule.html')
+
+def daily(request):
+    return render(request, '_components/attendance.html')
