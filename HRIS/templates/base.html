@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %} Home | Geopro{% endblock %}</title>
+  <title>{% block title %} Home | Geopro {% endblock %}</title>
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
   <!-- Include Tailwind CSS -->
   <link rel='icon' href="{% static 'images/favicon.ico' %}" />
@@ -14,7 +14,6 @@
 <body class="bg-white">
   <!-- Sidebar -->
   <div class="h-screen flex overflow-hidden bg-blue-50">
-    <!-- Sidebar component -->
     <div class="hidden bg-white h-screen border-r w-[283px] md:block flex-col justify-center items-center">
       
       {% include '_components/sidebar.html' %}

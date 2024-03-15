@@ -3,12 +3,16 @@ from django.shortcuts import render
 
 # Create your views here.
 
+# Index
 def index(request):
     return render(request, 'index.html')
 
 def base(request):
     return render(request, 'base.html')
 
+# End of Index
+
+# Dashboard
 def dashboard(request):
     context = {
         "dashboard": [
@@ -128,6 +132,9 @@ def dashboard(request):
     }
     return render(request, '_components/dashboard.html',context=context)
 
+# End of Dashboard
+
+# Attendance
 def attendance(request):
     threshold = request.GET.get("threshold")
     if threshold == "weekly":
@@ -336,3 +343,18 @@ def schedule(request):
 
 def daily(request):
     return render(request, '_components/attendance.html')
+
+# End Attendance Components
+
+
+# Team Components
+def team(request):
+    return render(request, '_components/team.html')
+
+def organization(request):
+    return render(request, '_components/_team[components]/organization.html')
+
+def employees(request):
+    return render(request, '_components/_team[components]/employees.html')
+
+# End Team Components
