@@ -166,3 +166,16 @@ function toggleDropdown() {
       menuButton.setAttribute("aria-expanded", "true");
     }
   }
+
+
+// Clickable Icon
+const button = document.getElementById('company-info-btn');
+    const text = document.getElementById('company-info-btn');
+    const svg = document.getElementById('clickable-icon');
+
+    button.addEventListener('click', function() {
+        // Add blue color to text
+        text.classList.add('blue-text');
+        // Add blue color to SVG
+        svg.classList.add('blue-svg');
+    });

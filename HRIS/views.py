@@ -23,7 +23,7 @@ def dashboard(request):
                 "absences": "0",
             },
             {
-                "name": "NIGGA",
+                "name": "Drew Garcia",
                 "department": "IT",
                 "tardiness": "0",
                 "absences": "0",
@@ -354,7 +354,13 @@ def team(request):
 def organization(request):
     return render(request, '_components/_team[components]/organization.html')
 
-def employees(request):
-    return render(request, '_components/_team[components]/employees.html')
-
 # End Team Components
+
+# Settings Components
+def settings(request):
+    return render(request, '_components/settings.html')
+
+def company_info(request):
+    return render(request, '_components/_settings[components]/_submenus/company_info.html')
+
+# End Settings Components

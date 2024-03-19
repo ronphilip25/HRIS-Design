@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<title>{% block title %} Company Info | Geopro {% endblock %}</title>
+
+{% block content %}
+
+{% include '_components/_settings[components]/widgets.html' %}
+
+<div class="container mx-auto">
+    <div class="grid grid-cols-4 grid-rows-1">
+        <div class="rounded-xl shadow-lg w-[375px] h-[350px] bg-white mt-4">
+            <h6 class="font-sans font-bold text-xl text-gray-600 p-2 ml-4 mt-3 mb-2">
+                Company Logo
+            </h6>
+            <div class="border-b border-blue-600 ml-6 mr-6 mb-2"></div>
+            <span class="font-sans text-xs font-normal text-gray-500 p-2 ml-4 w-full">
+                Upload and edit company logo here
+            </span>
+            <div class="ml-12 mt-2">
+                <ul class="list-disc">
+                    <li class=" text-xs font-normal font-sans text-gray-600">200px * 200px size is recommended</li>
+                    <li class=" text-xs font-normal font-sans text-gray-600">Max file size: 5MB</li>
+                    <li class=" text-xs font-normal font-sans text-gray-600">File format: .jpg, .jpeg, .png</li>
+                </ul>
+            </div>
+            <div class="flex items-center justify-between ml-5 mt-7">
+                <img src="{% static 'images/sample.png' %}" alt="SampleProfile" class="w-[140px] h-[140px] rounded-md border border-gray-200">
+                <div class="flex items-center justify-end mt-28">
+                    <button class=" rounded-md w-[68px] h-[29px] text-xs font-sans text-blue-600 border border-blue-600 mr-2">Change</button>
+                    <button class=" rounded-md w-[68px] h-[29px] text-xs font-sans font-bold text-white bg-red-900 mr-4">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-start-2 col-span-4 ml-1">
+            <div class="rounded-lg mt-4 w-[1148px] h-[740px] bg-white">
+                <h6 class="font-sans font-bold text-xl text-gray-600 p-4 ml-3 mb-[0.5px]">
+                    Company Information
+                </h6>
+                <div class="border-b border-blue-600 ml-6 mr-6 mt-1"></div>
+
+                <!-- Form -->
+                <div class="container">
+                    <div class="container mx-auto flex items-center justify-between">
+                        <div class="grid grid-cols-2 gap-10">
+                            <!-- Company Name -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px]">
+                                <div class="mb-2 mt-6 ml-7">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        Company Name
+                                    </label>
+                                    <input type="text" value="Geopro Global Solutions Inc." placeholder="Company Name" id="company_name" name="company_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- Representative name -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px] mr-7">
+                                <div class="mb-2 mt-6 ">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        Representative Name
+                                    </label>
+                                    <input type="text" placeholder="Enter Representative name" id="representative_name" name="representative_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- Incorporate Date -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px]">
+                                <div class="mb-2 mt-6 ml-7">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        Incorporate Date
+                                    </label>
+                                    <input type="text" placeholder="Company Name" id="company_name" name="company_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- Company Website -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px] mr-7">
+                                <div class="mb-2 mt-6 ">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        Company Website
+                                    </label>
+                                    <input type="text" placeholder="Enter Representative name" id="representative_name" name="representative_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- Company Email -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px]">
+                                <div class="mb-2 mt-6 ml-7">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        Company Email
+                                    </label>
+                                    <input type="text" placeholder="Company Name" id="company_name" name="company_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- Company Contact Number -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px] mr-7">
+                                <div class="mb-2 mt-6 ">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        Company Contact Number
+                                    </label>
+                                    <input type="text" placeholder="Enter Representative name" id="representative_name" name="representative_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- TIN Number -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px]">
+                                <div class="mb-2 mt-6 ml-7">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        TIN Number
+                                    </label>
+                                    <input type="text" placeholder="Company Name" id="company_name" name="company_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- RDO Code -->
+                            <form action="#" method="POST" class="w-[550px] h-[39px] mr-7">
+                                <div class="mb-2 mt-6 ">
+                                    <label for="company_name" class="block text-normal font-sans font-bold text-gray-700 mb-3">
+                                        RDO Code
+                                    </label>
+                                    <input type="text" placeholder="Enter Representative name" id="representative_name" name="representative_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+                                </div>
+                            </form>
+                            <!-- Company Address -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

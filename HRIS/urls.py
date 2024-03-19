@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     
-    # Index
+    # Index/Dashboard
     path('', views.index),
     path('base/', views.base, name='base'),
     path('dashboard/', views.dashboard, name='dashboard'),
@@ -15,6 +15,9 @@ urlpatterns = [
     
     # Team Components
     path('team/', views.team, name='team'),
-    path('team/organization', views.organization, name='organization'),
-    path('team/employees', views.employees, name='employees'),
+    path('team/organization/', views.organization, name='organization'),
+    
+    # Settings Copmponents
+    path('settings/', views.settings, name='settings'),
+    path('settings/company_info/', views.company_info, name='company_info'),
 ]
