@@ -1,0 +1,212 @@
+{% extends 'base.html' %} {% load static %}
+
+<title>{% block title %} Setup Work Schedule | Geopro {% endblock %}</title>
+
+{% block content %} 
+
+{% include '_components/_settings[components]/widgets.html'%}
+
+<div class="container mx-auto">
+  <div class="grid grid-cols-4 grid-rows-1 gap-4">
+    <div class="col-span-4">
+      <div
+        class="mt-4 flex h-[105px] items-center justify-between rounded-xl bg-white shadow-md"
+      >
+        <h6 class="ml-8 font-sans text-lg font-bold text-gray-700">
+          Setup Work Schedule (3)
+        </h6>
+        <button
+          class="mr-8 h-[41px] w-[141px] rounded-md bg-blue-700 font-sans text-xs font-bold text-white"
+        >
+        <a href="{% url 'company_work_sched' %}">Add Work Schedule</a>
+        </button>
+      </div>
+    </div>
+    <div class="col-start-1">
+      <div class="mt-2 h-[347px] rounded-xl bg-white shadow-md">
+        <div class="flex items-center justify-between p-6">
+          <div
+            class="h-[29px] w-[53px] rounded-full bg-red-600 p-[5px] text-center text-xs text-white"
+          >
+            Main
+          </div>
+          <button class="text-xs text-red-600">Delete</button>
+        </div>
+        <h6 class="ml-4 font-sans text-lg font-bold text-gray-700">
+          Default Schedule
+        </h6>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >Mon, Tue, Wed, Thur, Friday</span
+          >
+        </div>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >09:00 - 18:00</span
+          >
+        </div>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >08 hrs 00 mins in a day</span
+          >
+        </div>
+        <div class="mt-4">
+          <span class="ml-4 font-sans text-base font-bold text-gray-700"
+            >2 Employees</span
+          >
+        </div>
+        <div class="flex items-center justify-center mt-6">
+          <button class="text-white bg-blue-600 rounded-lg w-[329px] h-[49px]">
+            Add/Edit Employees
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-start-2">
+      <div class="mt-2 h-[347px] rounded-xl bg-white shadow-md">
+        <div class="flex items-center justify-between p-3 relative">
+          <h6 class="ml-1 mt-3 font-sans text-lg font-bold text-gray-700">
+            Day Shift
+          </h6>
+          <div id="toggle-menu" class="cursor-pointer">
+            <svg
+              class="h-6 w-6 text-gray-700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6a2 2 0 100-4 2 2 0 000 4zM12 12a2 2 0 100-4 2 2 0 000 4zM12 20a2 2 0 100-4 2 2 0 000 4z"
+              />
+            </svg>
+          </div>
+          <div
+            id="options-menu"
+            class="absolute right-0 top-full ml-2 w-[75px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="toggle-menu"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              onclick="editAction(event)"
+              >Edit</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              onclick="deleteAction(event)"
+              >Delete</a
+            >
+          </div>
+        </div>
+
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >Mon, Tue, Wed, Thur, Friday</span
+          >
+        </div>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >09:00 - 18:00</span
+          >
+        </div>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >08 hrs 00 mins in a day</span
+          >
+        </div>
+        <div class="mt-4">
+          <span class="ml-4 font-sans text-base font-bold text-gray-700"
+            >4 Employees</span
+          >
+        </div>
+        <div class="flex items-center justify-center mt-16">
+          <button class="text-white bg-blue-600 rounded-lg w-[329px] h-[49px]">
+            Add/Edit Employees
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-start-3">
+      <div class="mt-2 h-[347px] rounded-xl bg-white shadow-md">
+        <div class="flex items-center justify-between p-3 relative">
+          <h6 class="ml-1 mt-3 font-sans text-lg font-bold text-gray-700">
+            Graveyard Shift
+          </h6>
+          <div id="toggle-submenu" class="cursor-pointer">
+            <svg
+              class="h-6 w-6 text-gray-700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6a2 2 0 100-4 2 2 0 000 4zM12 12a2 2 0 100-4 2 2 0 000 4zM12 20a2 2 0 100-4 2 2 0 000 4z"
+              />
+            </svg>
+          </div>
+          <div
+            id="options-submenu"
+            class="absolute right-0 top-full ml-2 w-[75px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden"
+            role="submenu"
+            aria-orientation="vertical"
+            aria-labelledby="toggle-submenu"
+          >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              onclick="editAction(event)"
+              >Edit</a
+            >
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              onclick="deleteAction(event)"
+              >Delete</a
+            >
+          </div>
+        </div>
+
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >Mon, Tue, Wed, Thur, Friday</span
+          >
+        </div>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >20:00 - 05:00</span
+          >
+        </div>
+        <div class="mt-2">
+          <span class="ml-4 font-sans text-xs font-normal text-gray-400"
+            >08 hrs 00 mins in a day</span
+          >
+        </div>
+        <div class="mt-4">
+          <span class="ml-4 font-sans text-base font-bold text-gray-700"
+            >1 Employee</span
+          >
+        </div>
+        <div class="flex items-center justify-center mt-16">
+          <button class="text-white bg-blue-600 rounded-lg w-[329px] h-[49px]">
+            Add/Edit Employees
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/script.js' %}" ></script>
+
+{% endblock %}

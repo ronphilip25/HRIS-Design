@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<title>{% block title %} Work Place | Geopro {% endblock %}</title>
+
+{% block content %}
+
+{% include '_components/_settings[components]/widgets.html' %}
+
+<div class="container mx-auto">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-4">
+          <div class="col-span-4">
+            <div class="mt-4 flex h-[105px] items-center justify-between rounded-xl bg-white shadow-md">
+              <h6 class="ml-8 font-sans text-lg font-bold text-gray-700">Work Place</h6>
+              <button class="mr-8 h-[41px] w-[141px] rounded-md bg-blue-700 font-sans text-xs font-bold text-white">Add Work Place</button>
+            </div>
+          </div>
+          <div class="h-[168px] rounded-xl bg-white shadow-md mt-6">
+            <div class="flex items-center justify-between">
+              <h6 class="p-5 font-sans text-lg font-bold text-gray-700">GeoPro</h6>
+              <div class="relative">
+                <button type="button" id="toggle-menu" class="mr-4 inline-flex items-center justify-center bg-white px-2 py-2 text-sm font-medium text-gray-700" aria-expanded="false" aria-haspopup="true">
+                  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4zM2 10a2 2 0 114 0 2 2 0 01-4 0zm14 0a2 2 0 114 0 2 2 0 01-4 0z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div id="options-menu" class="absolute right-0 mr-4 hidden w-[75px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" aria-labelledby="toggle-menu">
+                  <div class="py-1" role="none">
+                    <a href="#" class="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Edit</a>
+                    <a href="#" class="block px-3 py-1 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ml-4 mr-4 border-b border-sky-600"></div>
+            <div class="ml-4 mt-4">
+              <span class="font-sans text-xs font-normal text-gray-500">Location</span>
+            </div>
+            <div class="ml-2 p-2">
+              <span class="font-sans text-sm font-bold text-gray-500">Clark Pampanga</span>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

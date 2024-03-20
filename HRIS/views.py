@@ -363,4 +363,12 @@ def settings(request):
 def company_info(request):
     return render(request, '_components/_settings[components]/_submenus/company_info.html')
 
+def work_place(request):
+    return render(request, '_components/_settings[components]/_submenus/work_place.html')
+
+def setup_work_sched(request):
+    return render(request, '_components/_settings[components]/_submenus/setup_work_sched.html')
+
+def company_work_sched(request):
+    return render(request, '_components/_settings[components]/_submenus/_schedule[setup_work]/company_work_sched.html')
 # End Settings Components

@@ -179,3 +179,86 @@ const button = document.getElementById('company-info-btn');
         // Add blue color to SVG
         svg.classList.add('blue-svg');
     });
+
+// Workplace Dropdown
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.getElementById('toggle-menu');
+    const menuOptions = document.getElementById('options-menu');
+
+    menuButton.addEventListener('click', function () {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', !isExpanded);
+      menuOptions.classList.toggle('hidden');
+    });
+  });
+
+// Schedule Dropdown
+  // Function to toggle the visibility of the options menu
+  document.addEventListener('DOMContentLoaded', function () {
+    // Function to toggle the visibility of the options menu
+    function toggleMenu(menuId) {
+      const menu = document.getElementById(menuId);
+      menu.classList.toggle('hidden');
+    }
+  
+    // Function to handle the Edit action
+    function editAction(event) {
+      event.preventDefault();
+      alert('Edit action triggered');
+    }
+  
+    // Function to handle the Delete action
+    function deleteAction(event) {
+      event.preventDefault();
+      alert('Delete action triggered');
+    }
+  
+    // Add event listener to toggle menu button 2
+    document.getElementById('toggle-menu2').addEventListener('click', function () {
+      toggleMenu('options-menu');
+    });
+  
+    // Add event listener to toggle submenu button
+    document.getElementById('toggle-submenu').addEventListener('click', function () {
+      toggleMenu('options-submenu');
+    });
+  
+    // Add event listeners to Edit and Delete links in submenu
+    const editLinks = document.querySelectorAll('#options-submenu a');
+    editLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.target.textContent === 'Edit') {
+          editAction(event);
+        } else if (event.target.textContent === 'Delete') {
+          deleteAction(event);
+        }
+        toggleMenu('options-submenu'); // Hide submenu after action
+      });
+    });
+  
+    // Workplace Dropdown
+    const menuButton = document.getElementById('toggle-menu');
+    const menuOptions = document.getElementById('options-menu');
+  
+    menuButton.addEventListener('click', function () {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      menuOptions.classList.toggle('hidden');
+    });
+  
+    // Add event listener to clickable icon
+    const clickableIcon = document.getElementById('company-info-btn');
+    clickableIcon.addEventListener('click', function () {
+      // Add blue color to text
+      clickableIcon.classList.add('blue-text');
+      // Add blue color to SVG
+      document.getElementById('clickable-icon').classList.add('blue-svg');
+    });
+  
+    // Add event listener to toggle form button
+    document.getElementById('toggle-form-btn').addEventListener('click', function () {
+      const formContainer = document.getElementById('formContainer');
+      formContainer.classList.toggle('hidden');
+    });
+  });
+  
