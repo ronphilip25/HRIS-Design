@@ -371,4 +371,7 @@ def setup_work_sched(request):
 
 def company_work_sched(request):
     return render(request, '_components/_settings[components]/_submenus/_schedule[setup_work]/company_work_sched.html')
+
+def holiday(request):
+    return render(request, '_components/_settings[components]/_submenus/holiday.html')
 # End Settings Components

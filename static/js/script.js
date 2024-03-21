@@ -262,3 +262,19 @@ const button = document.getElementById('company-info-btn');
     });
   });
   
+// Holiday Dropdown
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownBtn = document.getElementById("dropdownBtn");
+  const dropdownContent = document.getElementById("dropdownContent");
+
+  dropdownBtn.addEventListener("click", function () {
+    dropdownContent.classList.toggle("hidden");
+  });
+
+  // Close the dropdown when clicking outside of it
+  document.addEventListener("click", function (event) {
+    if (!dropdownBtn.contains(event.target)) {
+      dropdownContent.classList.add("hidden");
+    }
+  });
+});

@@ -23,4 +23,5 @@ urlpatterns = [
     path('settings/work_place/', views.work_place, name='work_place'),
     path('settings/setup_work_sched/', views.setup_work_sched, name='setup_work_sched'),
     path('settings/setup_work_sched/company_work_sched/', views.company_work_sched, name='company_work_sched'),
+    path('settings/holiday', views.holiday, name='holiday'),
 ]

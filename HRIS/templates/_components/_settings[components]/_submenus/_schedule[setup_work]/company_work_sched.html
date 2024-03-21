@@ -1,15 +1,130 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% load static %}
 
 {% include '_components/header.html' %}
 
-<title>{% block title %} Company Work Schedule Settings | Geopro {% endblock %}</title>
+<title>
+  {% block title %} Company Work Schedule Settings | Geopro {% endblock %}
+</title>
 
 {% block content %}
 
-<div>
-    sdadasdsad
+<div class="ml-4 mt-6 h-[650px] w-[1180px] rounded-xl bg-white shadow-md">
+  <div class="flex items-center justify-between">
+    <h6 class="p-5 font-sans text-lg font-bold text-gray-700">Company Work Schedule</h6>
+  </div>
+  <div class="ml-4 mr-4 border-b border-blue-600"></div>
+  <div class="ml-7 mt-1 p-4">
+    <ul class="list-disc">
+      <li class="font-sans text-xs font-normal text-blue-600">All employees are required to start/end at the same fixed hours (e.g. 09:00 - 18:00)</li>
+    </ul>
+  </div>
+  <div class="flex-col-2 flex justify-between">
+    <form action="#" method="POST">
+      <div class="mb-2 ml-5 mt-2">
+        <label for="work_name" class="text-normal mb-3 block font-sans font-bold text-gray-700"> Work Schedule Name</label>
+        <input type="text" placeholder="Enter Work Schedule name" id="work_name" name="work_name" class="mt-1 block h-[39px] w-[550px] rounded-md border border-gray-400 px-3 py-2 font-sans text-base font-normal focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required />
+      </div>
+    </form>
+    <form action="#" method="POST">
+      <div class="mb-3 mt-2 font-bold font-sans text-gray-700 text-base">Work Schedule</div>
+      <div class="mr-5 flex space-x-1">
+        {% csrf_token %}
+        <button class="day-button h-[39px] w-[77px] rounded-l-md border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Monday')">Mon</button>
+        <button class="day-button h-[39px] w-[77px] border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Tuesday')">Tue</button>
+        <button class="day-button h-[39px] w-[77px] border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Wednesday')">Wed</button>
+        <button class="day-button h-[39px] w-[77px] border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Thursday')">Thur</button>
+        <button class="day-button h-[39px] w-[77px] border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Friday')">Fri</button>
+        <button class="day-button h-[39px] w-[77px] border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Saturday')">Sat</button>
+        <button class="day-button h-[39px] w-[77px] rounded-r-md border border-gray-700 px-4 py-2 font-bold text-gray-700 hover:bg-blue-600 hover:text-white focus:border-gray-700 focus:text-white" onclick="updateDay('Sunday')">Sun</button>
+      </div>
+    </form>
+  </div>
+  <div class="ml-1 p-4 font-sans text-base font-bold text-gray-700">Actual work hours for a workday (excluding break time)</div>
+  <form action="#" method="POST">
+    <div class="mb-2 ml-4 mt-1">
+      <div class="flex">
+        <select id="country_code" name="country_code" class="block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+          <option value="08">08</option>
+        </select>
+        <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">hr(s)</div>
+        <select id="country_code" name="country_code" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+          <option value="00">00</option>
+        </select>
+        <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">min(s)</div>
+      </div>
+    </div>
+  </form>
+  <div class="ml-1 p-4 font-sans text-base font-bold text-gray-700">Break Time</div>
+  <div class="flex-col-2 flex">
+    <form action="#" method="POST">
+      <div class="mb-2 ml-4 mt-1">
+        <div class="flex">
+          <select id="country_code" name="country_code" class="block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="08">08</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">hr(s)</div>
+          <select id="country_code" name="country_code" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="00">00</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">min(s)</div>
+        </div>
+      </div>
+    </form>
+    <div class="ml-1 p-3 font-sans text-base font-bold text-gray-700">To</div>
+    <form action="#" method="POST">
+      <div class="mb-2 ml-1 mt-1">
+        <div class="flex">
+          <select id="country_code" name="country_code" class="block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="14">14</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">hr(s)</div>
+          <select id="country_code" name="country_code" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="00">00</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">min(s)</div>
+        </div>
+      </div>
+    </form>
+  </div>
+    <div class="ml-1 p-4 font-sans text-base font-bold text-gray-700">Start Time</div>
+  <div class="flex-col-2 flex">
+    <form action="#" method="POST">
+      <div class="mb-2 ml-4 mt-1">
+        <div class="flex">
+          <select id="country_code" name="country_code" class="block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="09">09</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">hr(s)</div>
+          <select id="country_code" name="country_code" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="18">18</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">min(s)</div>
+        </div>
+      </div>
+    </form>
+    <div class="ml-1 p-3 font-sans text-base font-bold text-gray-700">To</div>
+    <form action="#" method="POST">
+      <div class="mb-2 ml-1 mt-1">
+        <div class="flex">
+          <select id="country_code" name="country_code" class="block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="14">14</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">hr(s)</div>
+          <select id="country_code" name="country_code" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 px-3 py-2 font-sans text-base font-normal text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500 focus:ring-opacity-50" required>
+            <option value="00">00</option>
+          </select>
+          <div id="company_name" class="ml-2 block h-[39px] w-[80px] rounded-md border border-gray-300 bg-gray-200 px-3 py-2 text-center font-sans text-base font-normal text-gray-400">min(s)</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="border-b border-blue-600 mr-4 ml-4 mt-4"></div>
+  <div class="flex items-center justify-end mt-4 mr-4">
+    <button class="rounded-lg border w-[92px] h-[55px] text-base text-gray-500 font-sans font-normal border-gray-400 mr-3">Cancel</button>
+    <button class="rounded-lg border w-[92px] h-[55px] text-base text-white bg-blue-700 font-sans font-bold ">Add</button>
+  </div>
 </div>
 
 
