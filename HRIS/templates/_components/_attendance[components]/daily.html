@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% include '_components/header.html' %}
+
+<title> {% block title %} Daily | Geopro {% endblock %}</title>
+
+{% block content %}
+
+<div class=" container mx-auto">
+    <div class="grid grid-cols-4 gap-4 mt-4">
+
+      {% include '_components/_attendance[components]/_widgets/widget.html' %}
+
+      <!-- Widget 4 -->
+      <div class="col-start-1 rounded-lg bg-white p-2 col-span-3 shadow-md h-[750px]">
+        <div class="flex justify-between items-center mt-3 ml-3">
+            <h5 class="leading-44 text-2xl font-bold text-gray-700">Attendance</h5>  
+            <div class="rounded-md py-2 px-2 bg-blue-800 cursor-pointer mr-3">
+                <div class="text-white text-xs px-5 py-1 font-sans font-inter">
+                  <button>
+                    Download Excel
+                  </button>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="flex flex-col justify-evenly item-end font-sans font-inter text-gray-700 mt-3 ml-2 py-2">
+          {% for users in user %}
+          <div class="text-base font-bold">
+            {{ users.name }}
+          </div>
+          {% endfor %}
+          <div class="grid grid-cols-2 grid-rows-4 [&_div:nth-child(even)]:text-right mt-5">
+              <div class="border-b border-gray-200 py-1 mb-3 text-gray-400">Department</div>
+              <div class="border-b border-gray-200 py-1 mb-3 text-gray-500 text-sm font-bold">IT Department</div>
+              <div class="border-b border-gray-200 py-1 mb-3 text-gray-400">Work Schedule</div>
+              <div class="border-b border-gray-200 py-1 mb-3 text-gray-500 text-sm font-bold">Mon, Tue, Wed, Thu, Fri(9:00-18:00)</div>
+              <div class="border-b border-gray-200 py-1 mb-3 text-gray-400">Period</div>
+              <div class="border-b border-gray-200 py-1 mb-3 text-gray-500 text-sm font-bold">01/29/2024 Mon - 02/04/2024 Sun</div>
+              <div class="border-b border-gray-200 py-1 text-gray-400">Cumulative working hours</div>
+              <div class="border-b border-gray-200 py-1 text-gray-500 text-sm font-bold"> - </div>
+          </div>
+        </div>  
+        
+        <!-- Thresholdtab -->
+        {% include '_components/_attendance[components]/thresholdtab.html' %}
+        
+        <!-- Widget 5 -->
+        <div class="grid grid-cols-8 font-sans font-inter text-base font-bold text-gray-700 mt-10 ml-1 py-2">
+            <table class="col-span-8 border-separate border-gray-200 border-spacing-y-[0.5rem] my-[-2rem]">
+                <colgroup>
+                  <col span="3" class="text-center">
+                </colgroup>
+                <thead>
+                    <tr>
+                      <div>
+                        <th class="px-0 py-2 text-left border-b border-gray-300">Date</th>
+                        <th class="px-2 py-2 text-left border-b border-gray-300">Day</th>
+                        <th class="px-3 py-2 border-b border-gray-300 text-center">Time in/ Time-out</th>
+                        <th class="px-3 py-2 border-b border-gray-300 text-center">Break</th>
+                        <th class="px-3 py-2 border-b border-gray-300 text-center">Total working hrs</th>
+                        <th class="px-3 py-2 border-b border-gray-300 text-center">Overtime</th>
+                        <th class="px-3 py-2 border-b border-gray-300 text-center">Notes</th>
+                        <th class="px-3 py-2 border-b border-gray-300 text-center">Action</th>
+                      </div>
+                    </tr>
+                </thead>
+                <tbody class="font-sans text-xs font-normal font-inter">
+                  {% for at in attendance %}
+                    <tr>
+                        <td>{{ at.date }}</td>
+                        <td class="px-3 py-2">{{ at.day }}</td>
+                        <td class="px-3 py-2 text-center">{{ at.in_out }}</td>
+                        <td class="px-3 py-2 text-center">{{ at.break }}</td>
+                        <td class="px-3 py-2 text-center">{{ at.total_working_hrs }}</td>
+                        <td class="px-3 py-2 text-center">{{ at.overtime }}</td>
+                        <td class="px-3 py-2 text-center">{{ at.notes }}</td>
+                        <td class="text-blue-500 text-center">{{ at.action }}<a href="">Edit</a></td>
+                    </tr>
+                  {% endfor %}
+                </tbody>   
+            </table>
+        </div>
+        </div>
+
+
+            <!-- Widget 6 -->
+        <div class=" col-start-4 row-start-1 row-span-2 rounded-lg bg-white p-4 shadow-md ml-4">
+            <div class="relative">
+              <div class="font-inter ml-2 mt-2 font-sans">
+                <h5 class="leading-44 text-2xl font-bold text-black">Employees</h5>
+                <div class="grid grid-rows-12">
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inline-flex relative">
+                    <img
+                      src="{% static 'images/employee1.png' %}"
+                      class="w-[48px] h-[48px] rounded-full mt-3"
+                    />
+                    <div class=" absolute bottom-[1.5px] left-9 mb-1 border-white border-2 bg-green-600 rounded-full w-4 h-4"></div>
+                    <div class="py-3 w-48 h-90">
+                      <div class="text-sm font-bold font-sans font-inter text-center">
+                        Patricia Kim Rosauro
+                        <div
+                          class="text-sm font-normal font-sans font-inter text-start ml-7"
+                        >
+                          IT Department
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+</div>
+
+
+{% endblock %}

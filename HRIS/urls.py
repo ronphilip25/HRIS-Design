@@ -10,8 +10,16 @@ urlpatterns = [
     
     # Attendance Components
     path('attendance/', views.attendance, name='attendance'),
+    path('attendance/daily', views.daily, name='daily'),
     path('attendance/monthly', views.monthly, name='monthly'),
     path('attendance/schedule', views.schedule, name='schedule'),
+    
+    # Leave Components
+    path('leaves/', views.leaves, name='leaves'),
+    path('leaves/leave_usage', views.leave_usage, name='leave_usage'),
+    path('leaves/manual_grant', views.manual_grant, name='manual_grant'),
+    path('leaves/leave_settings', views.leave_settings, name='leave_settings'),
+    
     
     # Team Components
     path('team/', views.team, name='team'),

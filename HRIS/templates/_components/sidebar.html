@@ -1,114 +1,270 @@
 {% load static %}
 
 <div class="py-[14px]">
-    <div class=" flex items-center justify-center">
-        <a href="{% url 'dashboard' %}" class="mb-5">
-          <img src="{% static 'images/sidelogo.png' %}" alt="sidelogo" class="w-[157px] h-[64px]">
-      </a>
-    </div>
-      <div class="space-y-1">
-          <!-- Dashboard -->
-          <div class="flex items-center justify-end">
-              <button class="mt-1 py-1 text-lg text-gray-700 font-sans active:text-blue-600 focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl flex items-center pl-10 w-[247px] h-[62px]" id="dashboardBtn">
-                  <img src="{% static 'images/dashboard.png' %}" alt="Dashboard Icon">
-                    <a href="{% url 'dashboard' %}" class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Dashboard</a>
-              </button>
-          </div>   
-          <!-- Attendance -->
-          <div class="flex items-center justify-end">
-            <button class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]" id="attendanceBtn">
-              <img src="{% static 'images/attendance.png' %}" alt="Attendance Icon">
-                                <a href="{% url 'attendance' %}" class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Attendance</a>
-                                <div class="m-auto">
-                                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                      <path fill-rule="evenodd" d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                        </button>
-            </div>
-        <div class=" flex justify-center items-center text-sm font-normal font-sans">
-          <ul class="attendance-submenu ml-10" style="display: none;">
-            <li class="border-l-2 border-gray-500"><a href="{% url 'attendance' %}" class="block ml-4 py-2 px-4 text-gray-500  active:text-blue-600">Daily</a></li>
-            <li class="border-l-2 border-gray-500"><a href="{% url 'monthly' %}" class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600">Weekly/Monthly</a></li>
-            <li class="border-l-2 border-gray-500"><a href="{% url 'schedule' %}" class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600">Schedule</a></li>
-        </ul>
-        </div>
-          <!-- Leaves -->
-          <div class="flex items-center justify-end">
-            <button class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]" id="leavesBtn">
-              <img src="{% static 'images/leaves.png' %}" alt="Leaves Icon">
-                                <a href="{% url 'attendance' %}" class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Leaves</a>
-                                <div class="m-auto">
-                                  <svg class="w-4 h-4 ml-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                      <path fill-rule="evenodd" d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                        </button>
-            </div>
-          <div class=" flex justify-center items-center text-sm font-normal font-sans">
-            <ul class="leaves-submenu ml-7" style="display: none;">
-              <li class="border-l-2 border-gray-500 ml-8 pl-4"><a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600">Leave Usage History</a></li>
-              <li class="border-l-2 border-gray-500 ml-8 pl-4"><a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600">Manual Grant</a></li>
-              <li class="border-l-2 border-gray-500 ml-8 pl-4"><a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600">Leave Settings</a></li>
-          </ul>
-          </div>
-          <!-- Team -->
-          <div class="flex items-center justify-end">
-            <button class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]" id="teamBtn">
-              <img src="{% static 'images/team.png' %}" alt="Team Icon">
-                                <a href="{% url 'team' %}" class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Team</a>
-                                <div class="m-auto">
-                                  <svg class="w-4 h-4 ml-[48px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                      <path fill-rule="evenodd" d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                        </button>
-            </div>
-          <div class=" flex justify-center items-center text-sm font-normal font-sans">
-            <ul class="team-submenu ml-6" style="display: none;">
-              <li class="border-l-2 border-gray-500"><a href="{% url 'team' %}" class="block py-2 px-4 ml-4 text-gray-500 active:text-blue-600">Employees</a></li>
-              <li class="border-l-2 border-gray-500"><a href="{% url 'organization' %}" class="block py-2 px-4 ml-4 text-gray-500 active:text-blue-600">Organizations</a></li>
-          </ul>
-          </div>
-          <!-- Team -->
-
-          <!-- Filling -->
-          <div class="flex items-center justify-end">
-            <button class="flex items-center justify-end mt-2 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]" id="filingBtn">
-              <img src="{% static 'images/filing.png' %}" alt="Filing Icon">
-                                <a href="{% url 'attendance' %}" class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-5">Filing</a>
-                                <div class="m-auto">
-                                  <svg class="w-4 h-4 ml-[48px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                      <path fill-rule="evenodd" d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                        </button>
-            </div>
-        <div class=" flex justify-center items-center text-sm font-normal font-sans pl-8">
-          <ul class="filing-submenu ml-7" style="display: none;">
-            <li class="border-l-2 border-gray-500"><a href="#" class="block py-2 px-2 ml-3 text-gray-500 active:text-blue-600">Approval Management</a></li>
-            <li class="border-l-2 border-gray-500"><a href="#" class="block py-2 px-2 ml-3 text-gray-500 active:text-blue-600">Filing Settings</a></li>
-        </ul>
-        </div>
-          <!-- Filling -->
-
-          <!-- Settings -->
-          <div class="flex items-center justify-end">
-            <button class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-9 h-[62px]" id="settingsBtn">
-              <img src="{% static 'images/settings.png' %}" alt="Settings Icon">
-                                <a href="{% url 'settings' %}" class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Settings</a>
-                                <div class="m-auto">
-                                  <svg class="w-4 h-4 ml-[28px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                      <path fill-rule="evenodd" d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                        </button>
-            </div>
-          <div class=" flex justify-center items-center text-sm font-normal font-sans">
-            <ul class="settings-submenu ml-7" style="display: none;">
-              <li class="border-l-2 border-gray-500 ml-4 pl-5"><a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600">Company Settings</a></li>
-              <li class="border-l-2 border-gray-500 ml-4 pl-5"><a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600">Admin Settings</a></li>
-          </ul>
-          </div>
-      </div>
+  <div class="flex items-center justify-center">
+    <a href="{% url 'dashboard' %}" class="mb-5">
+      <img
+        src="{% static 'images/sidelogo.png' %}"
+        alt="sidelogo"
+        class="w-[157px] h-[64px]"
+      />
+    </a>
   </div>
+  <div class="space-y-1">
+    <!-- Dashboard -->
+    <div class="flex items-center justify-end">
+      <button
+        class="mt-1 py-1 text-lg text-gray-700 font-sans active:text-blue-600 focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl flex items-center pl-10 w-[247px] h-[62px]"
+        id="dashboardBtn"
+      >
+        <img src="{% static 'images/dashboard.png' %}" alt="Dashboard Icon" />
+        <a
+          href="{% url 'dashboard' %}"
+          class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4"
+          >Dashboard</a
+        >
+      </button>
+    </div>
+    <!-- Attendance -->
+    <div class="flex items-center justify-end">
+      <button
+        class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]"
+        id="attendanceBtn"
+      >
+        <img src="{% static 'images/attendance.png' %}" alt="Attendance Icon" />
+        <!-- <div class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Attendance</div> -->
+        <a
+          href="{% url 'attendance' %}"
+          class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4"
+          >Attendance</a
+        >
+        <div class="m-auto">
+          <svg
+            class="w-4 h-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div class="flex justify-center items-center text-sm font-normal font-sans">
+      <ul class="attendance-submenu ml-10" style="display: none">
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="{% url 'daily' %}"
+            class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600"
+            >Daily</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="{% url 'monthly' %}"
+            class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600"
+            >Weekly/Monthly</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="{% url 'schedule' %}"
+            class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600"
+            >Schedule</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Leaves -->
+    <div class="flex items-center justify-end">
+      <button
+        class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]"
+        id="leavesBtn"
+      >
+        <img src="{% static 'images/leaves.png' %}" alt="Leaves Icon" />
+        <div class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">
+          Leaves
+        </div>
+        <div class="m-auto">
+          <svg
+            class="w-4 h-4 ml-10"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div class="flex justify-center items-center text-sm font-normal font-sans">
+      <ul class="leaves-submenu ml-7" style="display: none">
+        <li class="border-l-2 border-gray-500 ml-8 pl-4">
+          <a
+            href="{% url 'leave_usage' %}"
+            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            >Leave Usage History</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500 ml-8 pl-4">
+          <a
+            href="{% url 'manual_grant' %}"
+            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            >Manual Grant</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500 ml-8 pl-4">
+          <a
+            href="{% url 'leave_settings' %}"
+            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            >Leave Settings</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Team -->
+    <div class="flex items-center justify-end">
+      <button
+        class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]"
+        id="teamBtn"
+      >
+        <img src="{% static 'images/team.png' %}" alt="Team Icon" />
+        <div class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">
+          Team
+        </div>
+        <div class="m-auto">
+          <svg
+            class="w-4 h-4 ml-[48px]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div class="flex justify-center items-center text-sm font-normal font-sans">
+      <ul class="team-submenu ml-6" style="display: none">
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="{% url 'team' %}"
+            class="block py-2 px-4 ml-4 text-gray-500 active:text-blue-600"
+            >Employees</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="{% url 'organization' %}"
+            class="block py-2 px-4 ml-4 text-gray-500 active:text-blue-600"
+            >Organizations</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Team -->
+
+    <!-- Filling -->
+    <div class="flex items-center justify-end">
+      <button
+        class="flex items-center justify-end mt-2 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-10 h-[62px]"
+        id="filingBtn"
+      >
+        <img src="{% static 'images/filing.png' %}" alt="Filing Icon" />
+        <div class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-5">
+          Filing
+        </div>
+        <div class="m-auto">
+          <svg
+            class="w-4 h-4 ml-[48px]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="flex justify-center items-center text-sm font-normal font-sans pl-8"
+    >
+      <ul class="filing-submenu ml-7" style="display: none">
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="#"
+            class="block py-2 px-2 ml-3 text-gray-500 active:text-blue-600"
+            >Approval Management</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500">
+          <a
+            href="#"
+            class="block py-2 px-2 ml-3 text-gray-500 active:text-blue-600"
+            >Filing Settings</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Filling -->
+
+    <!-- Settings -->
+    <div class="flex items-center justify-end">
+      <button
+        class="flex items-center justify-end mt-1 py-2 text-lg text-gray-700 font-sans focus:text-blue-600 focus:font-bold hover:bg-blue-50 focus:bg-blue-50 rounded-l-xl w-[247px] pl-9 h-[62px]"
+        id="settingsBtn"
+      >
+        <img src="{% static 'images/settings.png' %}" alt="Settings Icon" />
+        <div class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">
+          Settings
+        </div>
+        <div class="m-auto">
+          <svg
+            class="w-4 h-4 ml-[28px]"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M13.293 7.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L10 10.586l3.293-3.293z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div class="flex justify-center items-center text-sm font-normal font-sans">
+      <ul class="settings-submenu ml-7" style="display: none">
+        <li class="border-l-2 border-gray-500 ml-4 pl-5">
+          <a
+            href="{% url 'settings' %}"
+            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            >Company Settings</a
+          >
+        </li>
+        <li class="border-l-2 border-gray-500 ml-4 pl-5">
+          <a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            >Admin Settings</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

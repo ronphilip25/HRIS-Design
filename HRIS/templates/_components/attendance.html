@@ -8,36 +8,11 @@
 <title> {% block title %} Attendance | Geopro {% endblock %}</title>
 
 {% block content %}
+          <!-- Widgets 1-3 -->
+          <div class="container mx-auto">
+            <div class="grid grid-cols-4 mt-4 gap-4">
+                {% include '_components/_attendance[components]/_widgets/widget.html' %}
+              </div>
+          </div>
 
-    <div class="container mx-auto">
-        <div class="grid grid-cols-4 grid-rows-5 gap-4">
-          <!-- Widget 1 -->
-          {% include '_components/_attendance[components]/_widgets/widget1.html' %}
-      
-          <!-- Widget 2 -->
-          {% include '_components/_attendance[components]/_widgets/widget2.html' %}
-
-          <!-- Widget 3 -->
-          {% include '_components/_attendance[components]/_widgets/widget3.html' %}
-
-          <!-- Widget 4 -->
-          {% include '_components/_attendance[components]/_widgets/widget4.html' %}
-
-          <!-- Widget 5 -->
-          <div class="rounded-lg bg-white p-2 shadow-md col-span-3 row-span-7">
-            
-          {% include '_components/_attendance[components]/_widgets/widget5.html' %}
-
-          <!-- Thresholdtab -->
-          {% include '_components/_attendance[components]/thresholdtab.html' %}
-
-          <!---- Widget 6 -->
-
-          {% include '_components/_attendance[components]/_widgets/widget6.html' %}
-          
-        </div>
-        
-        </div>
-      </div>
-      
 {% endblock %}

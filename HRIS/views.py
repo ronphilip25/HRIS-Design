@@ -142,6 +142,9 @@ def attendance(request):
     # if threshold == "monthly":
     #     return render(request, 'attendance/monthly.html')
         
+    return render(request, '_components/attendance.html')
+
+def daily(request):
     context = {
         "attendance": [
             {
@@ -210,7 +213,7 @@ def attendance(request):
         
         
     }
-    return render(request, '_components/attendance.html', context=context)
+    return render(request, '_components/_attendance[components]/daily.html', context=context)
 
 def monthly(request):
     context = {
@@ -340,11 +343,24 @@ def monthly(request):
 
 def schedule(request):
     return render(request, '_components/_attendance[components]/schedule.html')
-
-def daily(request):
-    return render(request, '_components/attendance.html')
-
 # End Attendance Components
+
+
+# Leaves Components
+def leaves(request):
+    return render(request, '_components/leaves.html')
+
+def leave_usage(request):
+    return render(request, '_components/_leaves[components]/leave_usage.html')
+
+def manual_grant(request):
+    return render(request, '_components/_leaves[components]/manual_grant.html')
+
+def leave_settings(request):
+    return render(request, '_components/_leaves[components]/leave_settings.html')
+# End Leaves Components
+
+
 
 
 # Team Components
