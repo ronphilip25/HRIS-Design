@@ -18,7 +18,7 @@ urlpatterns = [
     path('leaves/', views.leaves, name='leaves'),
     path('leaves/leave_usage', views.leave_usage, name='leave_usage'),
     path('leaves/manual_grant', views.manual_grant, name='manual_grant'),
-    path('leaves/leave_settings', views.leave_settings, name='leave_settings'),
+    path('leaves/leave_setting', views.leave_setting, name='leave_setting'),
     
     
     # Team Components

@@ -55,28 +55,54 @@
       </button>
     </div>
     <div class="flex justify-center items-center text-sm font-normal font-sans">
-      <ul class="attendance-submenu ml-10" style="display: none">
-        <li class="border-l-2 border-gray-500">
-          <a
-            href="{% url 'daily' %}"
-            class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600"
-            >Daily</a
-          >
-        </li>
-        <li class="border-l-2 border-gray-500">
-          <a
-            href="{% url 'monthly' %}"
-            class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600"
-            >Weekly/Monthly</a
-          >
-        </li>
-        <li class="border-l-2 border-gray-500">
-          <a
-            href="{% url 'schedule' %}"
-            class="block ml-4 py-2 px-4 text-gray-500 active:text-blue-600"
-            >Schedule</a
-          >
-        </li>
+      <ul class="ml-10 attendance-submenu"
+      {% if 'attendance' in request.path %}
+      style="display: block;"
+      {% else %}
+      style="display: none;"
+      {% endif %}>
+      <li class="border-l-2 border-gray-500">
+        <a
+          href="{% url 'daily' %}"
+          class="
+            block px-4 py-2 ml-4
+            {% if 'daily' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}
+            "
+          >Daily</a
+        >
+      </li>
+      <li class="border-l-2 border-gray-500">
+        <a
+          href="{% url 'monthly' %}"
+          class="
+            block px-4 py-2 ml-4
+            {% if 'monthly' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}
+            "
+          >Weekly/Monthly</a
+        >
+      </li>
+      <li class="border-l-2 border-gray-500">
+        <a
+          href="{% url 'schedule' %}"
+          class="
+            block px-4 py-2 ml-4
+            {% if 'schedule' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}
+            "
+          >Schedule Settings</a
+        >
+      </li>
       </ul>
     </div>
     <!-- Leaves -->
@@ -106,25 +132,45 @@
       </button>
     </div>
     <div class="flex justify-center items-center text-sm font-normal font-sans">
-      <ul class="leaves-submenu ml-7" style="display: none">
+      <ul class="leaves-submenu ml-7" 
+      {% if 'leaves' in request.path %}
+      style="display: block;"
+      {% else %}
+      style="display: none;"
+      {% endif %}>
         <li class="border-l-2 border-gray-500 ml-8 pl-4">
           <a
             href="{% url 'leave_usage' %}"
-            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            class="block py-2 px-4  
+            {% if 'leave_usage' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Leave Usage History</a
           >
         </li>
         <li class="border-l-2 border-gray-500 ml-8 pl-4">
           <a
             href="{% url 'manual_grant' %}"
-            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            class="block py-2 px-4 
+            {% if 'manual_grant' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Manual Grant</a
           >
         </li>
         <li class="border-l-2 border-gray-500 ml-8 pl-4">
           <a
-            href="{% url 'leave_settings' %}"
-            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            href="{% url 'leave_setting' %}"
+            class="block py-2 px-4 
+            {% if 'leave_setting' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Leave Settings</a
           >
         </li>
@@ -157,18 +203,33 @@
       </button>
     </div>
     <div class="flex justify-center items-center text-sm font-normal font-sans">
-      <ul class="team-submenu ml-6" style="display: none">
+      <ul class="team-submenu ml-6"
+      {% if 'team' in request.path %}
+      style="display: block;"
+      {% else %}
+      style="display: none;"
+      {% endif %}>
         <li class="border-l-2 border-gray-500">
           <a
             href="{% url 'team' %}"
-            class="block py-2 px-4 ml-4 text-gray-500 active:text-blue-600"
+            class="block py-2 px-4 ml-4 
+            {% if 'team' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Employees</a
           >
         </li>
         <li class="border-l-2 border-gray-500">
           <a
             href="{% url 'organization' %}"
-            class="block py-2 px-4 ml-4 text-gray-500 active:text-blue-600"
+            class="block py-2 px-4 ml-4
+            {% if 'organization' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Organizations</a
           >
         </li>
@@ -205,18 +266,33 @@
     <div
       class="flex justify-center items-center text-sm font-normal font-sans pl-8"
     >
-      <ul class="filing-submenu ml-7" style="display: none">
+      <ul class="filing-submenu ml-7"
+      {% if 'filing' in request.path %}
+      style="display: block;"
+      {% else %}
+      style="display: none;"
+      {% endif %}>
         <li class="border-l-2 border-gray-500">
           <a
             href="#"
-            class="block py-2 px-2 ml-3 text-gray-500 active:text-blue-600"
+            class="block py-2 px-2 ml-3
+            {% if 'organization' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Approval Management</a
           >
         </li>
         <li class="border-l-2 border-gray-500">
           <a
             href="#"
-            class="block py-2 px-2 ml-3 text-gray-500 active:text-blue-600"
+            class="block py-2 px-2 ml-3
+            {% if 'organization' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Filing Settings</a
           >
         </li>
@@ -251,16 +327,31 @@
       </button>
     </div>
     <div class="flex justify-center items-center text-sm font-normal font-sans">
-      <ul class="settings-submenu ml-7" style="display: none">
+      <ul class="settings-submenu ml-7"
+      {% if 'settings' in request.path %}
+      style="display: block;"
+      {% else %}
+      style="display: none;"
+      {% endif %}>
         <li class="border-l-2 border-gray-500 ml-4 pl-5">
           <a
             href="{% url 'settings' %}"
-            class="block py-2 px-4 text-gray-500 active:text-blue-600"
+            class="block py-2 px-4
+            {% if 'settings' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Company Settings</a
           >
         </li>
         <li class="border-l-2 border-gray-500 ml-4 pl-5">
-          <a href="#" class="block py-2 px-4 text-gray-500 active:text-blue-600"
+          <a href="#" class="block py-2 px-4
+            {% if 'admin' in request.path %}
+            text-blue-600
+            {% else %}
+            text-gray-500
+            {% endif %}"
             >Admin Settings</a
           >
         </li>

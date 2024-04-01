@@ -356,8 +356,8 @@ def leave_usage(request):
 def manual_grant(request):
     return render(request, '_components/_leaves[components]/manual_grant.html')
 
-def leave_settings(request):
-    return render(request, '_components/_leaves[components]/leave_settings.html')
+def leave_setting(request):
+    return render(request, '_components/_leaves[components]/leave_setting.html')
 # End Leaves Components
 
 
