@@ -8,5 +8,180 @@
 
 {% block content %}
 
-
+<div class="container mx-6 mt-4">
+    <div class="flex flex-col">
+      <div class="h-[106px] w-[1581px] rounded-lg bg-white shadow-lg">
+        <div class="mt-6 flex items-center justify-between px-4">
+          <div class="text-normal font-inter font-sans font-bold text-blue-500">Applicable days prior the date of leave</div>
+          <div class="mr-32 font-sans text-sm font-normal text-gray-600">Applicable days prior to date of leave</div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="ml-4 font-sans text-sm font-normal text-blue-500">Indicate the appropriate lead time for employees to submit leave requests by selecting the applicable days prior to the leace date.</div>
+          <div class="flex items-center justify-between">
+            <div class="relative inline-block text-left">
+              <div>
+                <button id="dropdownBtn" type="button" class="mr-4 inline-flex h-[34px] w-[264px] justify-between rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  1 Day(s)
+                  <!-- Heroicon name: solid/chevron-down -->
+                  <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+              <div id="dropdownMenu" class="absolute z-10 mt-2 hidden w-40 rounded-md bg-white shadow-lg">
+                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Monday</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Tuesday</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Wednesday</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Thursday</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Friday</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Saturday</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Sunday</a>
+                </div>
+              </div>
+            </div>
+            <div class="font-inter mr-5 h-[41px] w-[77px] rounded-lg bg-sky-800 py-2 text-center font-sans text-base font-bold text-white duration-200 ease-in hover:scale-105">Save</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Section -->
+  <div class="mt-4 grid grid-cols-3 gap-[1px]">
+    <div class="mx-5 h-[347px] w-[496px] rounded-lg bg-white shadow-lg" id="expandableForm">
+      <div class="item-center mx-3 flex justify-between p-5">
+        <span class="text-normal font-inter font-sans font-bold text-gray-700">Annual Leave Settings (for Regular)</span>
+        <button class="font-inter font-sans text-sm font-normal text-blue-600">Settings</button>
+      </div>
+      <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+        <span class="font-sans text-sm font-normal text-gray-400">Allowable Duration</span>
+        <span class="font-sans text-sm font-bold text-gray-400">One Day</span>
+      </div>
+      <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+        <span class="font-sans text-sm font-normal text-gray-400">Start of Crediting</span>
+        <span class="font-sans text-sm font-bold text-gray-400">Fiscal Year</span>
+      </div>
+      <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+        <span class="font-sans text-sm font-normal text-gray-400">Expiration Policy</span>
+        <span class="font-sans text-sm font-bold text-gray-400">Expires after 1 year</span>
+      </div>
+      <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+        <span class="font-sans text-sm font-normal text-gray-400">1st year Prorated Rule Set-up</span>
+        <span class="font-sans text-sm font-bold text-gray-400">1 day(s) every 1 month(s)</span>
+      </div>
+      <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+        <span class="font-sans text-sm font-normal text-gray-400">Expiration Policy</span>
+        <span class="font-sans text-sm font-bold text-gray-400">Expires after 1 year</span>
+      </div>
+      <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+        <span class="font-sans text-sm font-normal text-gray-400">Approval Process</span>
+        <span class="font-sans text-sm font-bold text-gray-400">Level 1 Approver (Level 1 Head)</span>
+      </div>
+    </div>
+    <!-- End Second Section -->
+  
+    <!-- Third Section -->
+    <div class="border-l border-r border-gray-400">
+      <div class="mx-5 h-44 w-[496px] rounded-lg bg-white shadow-lg" id="expandableForm1">
+        <div class="font-inter ml-5 flex pt-5">
+          <span class="font-sans text-base font-bold text-gray-700">Special Leave Settings (for Non-Regular)</span>
+        </div>
+        <div class="font-inter flex justify-end pt-14 text-center font-sans text-base font-normal">
+          <button id="outerSaveBtn1" class="font-inter mr-5 h-[55px] w-[103px] rounded-lg bg-sky-800 font-sans text-base font-bold text-white duration-200 ease-in hover:scale-105">
+            <span>Save</span>
+          </button>
+        </div>
+      </div>
+  
+      <div class="mx-5 mt-4 h-[303px] w-[496px] rounded-lg bg-white shadow-lg" id="expandableForm">
+        <div class="item-center flex justify-between p-5">
+          <span class="text-normal font-inter ml-3 font-sans font-bold text-gray-700">Special Leave 1</span>
+          <div class="relative inline-block text-left">
+            <button type="button" class="inline-flex h-8 w-8 justify-center">
+              <svg class="h-5 w-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6a2 2 0 100-4 2 2 0 000 4zM12 12a2 2 0 100-4 2 2 0 000 4zM12 18a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Employment Type</span>
+          <span class="font-sans text-sm font-bold text-gray-400">Intern/Part-Time</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Allowable Leaves</span>
+          <span class="font-sans text-sm font-bold text-gray-400">One Day</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Leave Credits</span>
+          <span class="font-sans text-sm font-bold text-gray-400">1 day(s) every 1 month(s)</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Expiration Policy</span>
+          <span class="font-sans text-sm font-bold text-gray-400">None</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Approval Process</span>
+          <span class="font-sans text-sm font-bold text-gray-400">Level 1 Approver (Level 1 Head)</span>
+        </div>
+      </div>
+    </div>
+    <!-- End Third Section -->
+  
+    <!-- Fourth Section -->
+    <div class="mx-5 h-44 w-[496px] rounded-lg bg-white shadow-lg">
+      <div class="ml-5 flex pt-5">
+        <span class="font-sans text-base font-bold text-gray-700">Other Leave Sample</span>
+      </div>
+      <div class="font-inter flex justify-end pt-14 text-center font-sans text-base font-normal">
+        <button class="font-inter mr-5 h-[55px] w-[103px] rounded-lg bg-sky-800 font-sans text-base font-bold text-white duration-200 ease-in hover:scale-105">
+          <span>Add</span>
+        </button>
+      </div>
+  
+      <div class="mt-9 h-[259px] w-[495px] rounded-lg bg-white shadow-lg" id="expandableForm">
+        <div class="item-center flex justify-between p-5">
+          <span class="text-normal font-inter ml-3 font-sans font-bold text-gray-700">Special Leave 1</span>
+          <div class="relative inline-block text-left">
+            <button type="button" class="inline-flex h-8 w-8 justify-center">
+              <svg class="h-5 w-5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6a2 2 0 100-4 2 2 0 000 4zM12 12a2 2 0 100-4 2 2 0 000 4zM12 18a2 2 0 100-4 2 2 0 000 4z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Grant Leave</span>
+          <span class="font-sans text-sm font-bold text-gray-400">Upon Application</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Days Granted</span>
+          <span class="font-sans text-sm font-bold text-gray-400">1 Day</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Salary Payment Status</span>
+          <span class="font-sans text-sm font-bold text-gray-400">Unpaid</span>
+        </div>
+        <div class="mx-5 flex items-center justify-between border-b border-gray-300 p-[0.7rem]">
+          <span class="font-sans text-sm font-normal text-gray-400">Approval Process</span>
+          <span class="font-sans text-sm font-bold text-gray-400">Level 1 (ja)</span>
+        </div>
+      </div>
+    </div>
+    <!-- End Fourth Section -->
+  
+  
+    <!-- Borders -->
+    <div class="col-start-2 row-start-2 border-l border-r border-gray-400"></div>
+    <div class="col-start-2 row-start-3 border-l border-r border-gray-400"></div>
+    <div class="col-start-2 row-start-4 border-l border-r border-gray-400"></div>
+    <div class="col-start-2 row-start-5 border-l border-r border-gray-400"></div>
+    <div class="col-start-2 row-start-6 border-l border-r border-gray-400"></div>
+    <div class="col-start-2 row-start-7 border-l border-r border-gray-400"></div>
+    <!-- End Borders -->
+  </div>
+  
+  
+  
 {% endblock %}
