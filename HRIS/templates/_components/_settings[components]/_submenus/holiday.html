@@ -8,49 +8,94 @@
 
 {% include '_components/_settings[components]/_widget/widgets.html' %}
 
+<!-- First Section -->
+<div class="container mx-auto">
+  <div class="grid grid-cols-4">
+    <div class="col-span-4">
+      <div
+        class="mt-4 flex h-[105px] items-center justify-between rounded-xl bg-white shadow-md"
+      >
+        <h6 class="ml-8 font-sans text-lg font-bold text-gray-700">Holiday</h6>
+        <div class="flex">
+          <div class="relative inline-block mr-4">
+            <button
+              id="dropdownBtn"
+              type="button"
+              class="inline-flex h-[41px] w-[264px] justify-between rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              2024
+              <!-- Heroicon name: solid/chevron-down -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="-mr-1 ml-2 h-5 w-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
 
-    <!-- First Section -->
-        <div class="container mx-auto">
-          <div class="grid grid-cols-4">
-            <div class="col-span-4">
-              <div class="mt-4 flex h-[105px] items-center justify-between rounded-xl bg-white shadow-md">
-                <h6 class="ml-8 font-sans text-lg font-bold text-gray-700">Holiday</h6>
-                <div class="flex">
-                  <div class="relative inline-block mr-4">
-                    <button id="dropdownBtn" type="button" class="inline-flex h-[41px] w-[264px] justify-between rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                      2024
-                      <!-- Heroicon name: solid/chevron-down -->
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="-mr-1 ml-2 h-5 w-5">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                      </svg>
-                    </button>
-      
-                    <div id="dropdownContent" class="dropdown absolute right-0 mt-2 hidden w-[264px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                      <ul class="list-none py-1">
-                        <li><a href="#" class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">2024</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <button class="mr-8 h-[41px] w-[141px] rounded-md bg-blue-700 font-sans text-xs font-bold text-white">Add Holiday</button>
-                </div>
-              </div>
-            </div>    
-          </div>
-
-          <!-- Second Section -->
-          <div class="rounded-lg bg-white h-[716px] shadow-md col-span-4 mt-4">
-            <div class="font-bold font-sans text-sm text-gray-700 p-5">
-                <div class="flex items-center justify-between mt-2">
-                    <div>Home Name</div>
-                    <div>Date</div>
-                    <div>Type</div>
-                    <div>Sort By</div>
-                    <div>Status</div> 
-                </div>
+            <div
+              id="dropdownContent"
+              class="dropdown absolute right-0 mt-2 hidden w-[264px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+            >
+              <ul class="list-none py-1">
+                <li>
+                  <a
+                    href="#"
+                    class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >2024</a
+                  >
+                </li>
+              </ul>
             </div>
-            <div class="border-t border-gray-400 mr-4 ml-4"></div>
-            <div class="flex items-center justify-between font-sans text-xs font-bold text-gray-700 p-4"></div>
+          </div>
+          <button
+            class="mr-8 h-[41px] w-[141px] rounded-md bg-blue-700 font-sans text-xs font-bold text-white"
+          >
+            Add Holiday
+          </button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Section -->
+  <div class="rounded-lg bg-white h-[716px] shadow-md col-span-4 mt-4">
+    <div class="font-bold font-sans text-sm text-gray-700 p-5">
+      <div class="flex items-center justify-between mt-2">
+        <div class="w-1/5">Holiday Name</div>
+          <div class="w-1/5 pl-20">Date</div>
+          <div class="w-1/5 pl-20">Type</div>
+          <div class="w-1/5 pl-20">Set By</div>
+          <div class="w-1/5 pl-20">Status</div>
         </div>
-  
+      </div>
+      <div class="ml-4 mr-4 border-t border-gray-400"></div>
+      <div class="flex items-center justify-between p-4 font-sans text-xs ">
+        <table class="w-full">
+          <tr>
+            <td class="w-1/5 font-bold text-gray-700">New Year's Day</td>
+            <td class="w-1/5 pl-20 text-gray-500">January 1st</td>
+            <td class="w-1/5 pl-20 text-gray-500">Regular Holiday</td>
+            <td class="w-1/5 pl-24 text-gray-500">HR</td>
+            <td class="w-1/5 pl-24 text-gray-500">Enabled</td>
+            <td><button><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" enable-background="new 0 0 24 24" viewBox="0 0 24 24" id="kebab-menu">
+                  <g>
+                    <circle cx="12" cy="5" r="2"></circle>
+                    <circle cx="12" cy="19" r="2"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </g>
+                </svg></button></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </table>
+      </div>
+  </div>
+</div>
+
 {% endblock %}

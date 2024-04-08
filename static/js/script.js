@@ -279,4 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//
+// Navbar Change Text
+function changeText(text) {
+  document.getElementById("navbarText").innerText = text;
+}
