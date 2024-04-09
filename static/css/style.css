@@ -2048,26 +2048,9 @@ canvas {
   left: 0;
 }
 
-li {
-  position: relative;
-}
-
-li::before {
-  position: absolute;
-  top: -0.75rem;
-  left: -29px;
-  z-index: -10;
-  display: inline;
-  height: 22.5px;
-  width: 1rem;
-  border-width: 2px;
-  border-top-width: 0px;
-  border-right-width: 0px;
-  --tw-border-opacity: 1;
-  border-color: rgb(71 85 105 / var(--tw-border-opacity));
-  --tw-content: '';
-  content: var(--tw-content);
-}
+/* li {
+	@apply relative before:absolute before:content-[''] before:-top-3 before:-left-[29px] before:w-4 before:h-[22.5px] before:inline before:border-2 before:border-t-0 before:border-r-0 before:border-slate-600 before:-z-10;
+  } */
 
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
@@ -2119,6 +2102,11 @@ li::before {
 .hover\:bg-indigo-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-red-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .hover\:font-bold:hover {
