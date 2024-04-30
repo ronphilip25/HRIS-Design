@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% include '_components/header.html' %}
+
+<title>{% block title %} Admin Settings | Geopro {% endblock %}</title>
+
+{% block content %}
+
+{% include '_components/_settings[components]/_widget/widgets2.html' %}
+
+{% endblock %}

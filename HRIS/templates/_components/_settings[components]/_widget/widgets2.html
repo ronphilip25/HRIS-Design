@@ -1,0 +1,50 @@
+<div class="container mx-auto mt-3">
+  <div class="flex">
+    <div class="w-full rounded-xl p-4 bg-white">
+      <ul class="list-disc pl-4 font-sans text-sm font-normal text-blue-600">
+        <li>
+          Master Admin and other admin user types can be managed in this menu.
+        </li>
+        <li>
+          Please double check the Permisson of menu access from each user type
+          to protect sensitive employee profile.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mx-auto flex space-x-3 h-[80vh]">
+    <div class="w-[283px] border bg-white rounded-lg p-5 py-4 mt-2">
+      <h6
+        class="border-b border-blue-500 text-gray-700 py-4 mr-5 ml-2 text-base font-bold"
+      >
+        Default User Group
+      </h6>
+      <div class="text-center font-sans text-lg text-gray-700 mt-4">
+        <button
+          class="rounded-lg active:font-bold focus:font-bold focus:bg-blue-100 focus:text-blue-800 hover:bg-blue-100 h-[62px] p-4 w-[219px]"
+        >
+          <a href="{% url 'master_admin2' %}">Master Admin2</a>
+        </button>
+        <button
+          class="rounded-lg active:font-bold focus:font-bold focus:bg-blue-100 focus:text-blue-800 mt-4 hover:bg-blue-100 h-[62px] p-4 w-[219px]"
+        >
+          Head Group 1
+        </button>
+      </div>
+      <div>
+        <h6
+          class="border-b border-blue-500 text-gray-700 py-4 mr-5 ml-2 text-base font-bold"
+        >
+          New Group(s)
+        </h6>
+        <div class="text-center font-sans text-lg text-gray-700 mt-4">
+          <button class="p-4 mr-24">Testers</button>
+        </div>
+      </div>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+  </div>
+</div>

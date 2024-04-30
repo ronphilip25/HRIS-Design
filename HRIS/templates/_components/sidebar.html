@@ -34,11 +34,11 @@
       >
         <img src="{% static 'images/attendance.png' %}" alt="Attendance Icon" />
         <!-- <div class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4">Attendance</div> -->
-        <a 
-          href="{% url 'attendance' %}"
+        <div 
+          
           class="text-lg font-sans focus:text-blue-600 focus:font-bold ml-4"
           onclick="changeText('Attendance')"
-          >Attendance</a
+          >Attendance</div
         >
         <div class="mx-auto">
           <svg
@@ -337,9 +337,9 @@
       {% endif %}>
         <li class="border-l-2 border-gray-500 ml-4 pl-5">
           <a
-            href="{% url 'settings' %}"
+            href="{% url 'company_settings' %}"
             class="block py-2 px-4
-            {% if 'settings' in request.path %}
+            {% if 'company_settings' in request.path %}
             text-blue-600
             {% else %}
             text-gray-500
@@ -348,8 +348,8 @@
           >
         </li>
         <li class="border-l-2 border-gray-500 ml-4 pl-5">
-          <a href="#" class="block py-2 px-4
-            {% if 'admin' in request.path %}
+          <a href="{% url 'admin_settings' %}" class="block py-2 px-4
+            {% if 'admin_settings' in request.path %}
             text-blue-600
             {% else %}
             text-gray-500

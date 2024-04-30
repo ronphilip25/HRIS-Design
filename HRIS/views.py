@@ -135,12 +135,12 @@ def dashboard(request):
 # End of Dashboard
 
 # Attendance
-def attendance(request):
-    threshold = request.GET.get("threshold")
-    if threshold == "weekly":
-        return render(request, 'attendance/weekly.html')
-    # if threshold == "monthly":
-    #     return render(request, 'attendance/monthly.html')
+# def attendance(request):
+#     threshold = request.GET.get("threshold")
+#     if threshold == "weekly":
+#         return render(request, 'attendance/weekly.html')
+#     # if threshold == "monthly":
+#     #     return render(request, 'attendance/monthly.html')
         
     return render(request, '_components/attendance.html')
 
@@ -373,8 +373,8 @@ def organization(request):
 # End Team Components
 
 # Settings Components
-def settings(request):
-    return render(request, '_components/settings.html')
+def company_settings(request):
+    return render(request, '_components/_settings[components]/company_settings.html')
 
 def company_info(request):
     return render(request, '_components/_settings[components]/_submenus/company_info.html')
@@ -390,4 +390,10 @@ def company_work_sched(request):
 
 def holiday(request):
     return render(request, '_components/_settings[components]/_submenus/holiday.html')
+
+def admin_settings(request):
+    return render(request, '_components/_settings[components]/admin_settings.html')
+
+def master_admin2(request):
+    return render(request, '_components/_settings[components]/_submenus/master_admin2.html')
 # End Settings Components
