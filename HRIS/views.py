@@ -7,8 +7,9 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def base(request):
-    return render(request, 'base.html')
+# def base(request):
+#     return render(request, 'base.html')
+
 
 # End of Index
 
@@ -396,4 +397,10 @@ def admin_settings(request):
 
 def master_admin2(request):
     return render(request, '_components/_settings[components]/_submenus/master_admin2.html')
+
+def head_group(request):
+    return render(request, '_components/_settings[components]/_submenus/head_group.html')
+
+def testers(request):
+    return render(request, '_components/_settings[components]/_submenus/testers.html')
 # End Settings Components
