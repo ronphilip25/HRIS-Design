@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% include '_components/header.html'%} 
+
+{% block title %} Filing Settings | Geopro {% endblock %} {% block content %}
+
+
+<div class="container mx-auto mt-3">
+    <div class="grid grid-cols-4 gap-2">
+      <div class="h-[118px] w-[378px] rounded-lg bg-white p-3 text-base text-gray-700 shadow-lg">
+        Filing
+        <div class="mt-5 flex justify-end">
+          <button class="h-[41px] w-[107px] rounded-lg bg-blue-600 text-sm font-bold text-white shadow-lg">Add Filing</button>
+        </div>
+      </div>
+      <div class="h-[118px] w-[378px] rounded-lg bg-white p-3 text-base text-gray-700 shadow-lg">
+        Category
+        <div class="flex items-center justify-center">
+          <button id="dropdownBtn" type="button" class="mt-4 inline-flex h-[48px] w-[346px] justify-between rounded-md border border-gray-300 bg-white p-3 px-4 text-base font-normal text-gray-600 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            All Category
+            <!-- Heroicon name: solid/chevron-down -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="-mr-1 ml-2 h-5 w-5">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="h-[118px] w-[378px] rounded-lg bg-white p-3 text-base text-gray-700 shadow-lg">
+        Category
+        <div class="mt-5 flex justify-end">
+          <button class="h-[41px] w-[107px] rounded-lg bg-blue-600 text-sm font-bold text-white">Add / Edit</button>
+        </div>
+      </div>
+  
+      <h6 class="col-start-1 mt-3 font-sans text-lg font-bold text-gray-700">Filing List</h6>
+  
+      <div class="col-start-1 mt-3">
+        <div class="h-[347px] w-[378px] rounded-lg shadow-md bg-white">
+          <div class="flex items-center justify-between p-5">
+            <div class="h-[28px] w-[58px] rounded-full bg-red-200 px-3 py-1 font-sans text-sm text-red-800">Loans</div>
+            <button class="text-blue-600">Edit</button>
+          </div>
+          <div class="flex items-center p-5 font-bold text-gray-700">Loan</div>
+          <div class="flex items-center pl-5 font-normal text-gray-400">Application for loans</div>
+        </div>
+      </div>
+  
+      <div class="col-start-2 mt-3">
+        <div class="h-[347px] w-[378px] rounded-lg shadow-md bg-white">
+          <div class="flex items-center justify-between p-5">
+            <div class="h-[29px] w-[41px] rounded-full bg-red-200 px-3 py-1 font-sans text-sm text-red-800">HR</div>
+            <button class="text-blue-600">Edit</button>
+          </div>
+          <div class="flex items-center p-5 font-bold text-gray-700">COE</div>
+          <div class="flex items-center pl-5 font-normal text-gray-400">Request for Certificate of Employment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+{% endblock %}

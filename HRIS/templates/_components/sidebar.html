@@ -213,9 +213,9 @@
       {% endif %}>
         <li class="border-l-2 border-gray-500">
           <a
-            href="{% url 'team' %}"
+            href="{% url 'employees' %}"
             class="block py-2 px-4 ml-4 
-            {% if 'team' in request.path %}
+            {% if 'employees' in request.path %}
             text-blue-600
             {% else %}
             text-gray-500
@@ -276,9 +276,9 @@
       {% endif %}>
         <li class="border-l-2 border-gray-500">
           <a
-            href="#"
+            href="{% url 'approval_management' %}"
             class="block py-2 px-2 ml-3
-            {% if 'organization' in request.path %}
+            {% if 'approval_management' in request.path %}
             text-blue-600
             {% else %}
             text-gray-500
@@ -288,9 +288,9 @@
         </li>
         <li class="border-l-2 border-gray-500">
           <a
-            href="#"
+            href="{% url 'filing_settings' %}"
             class="block py-2 px-2 ml-3
-            {% if 'organization' in request.path %}
+            {% if 'filing_settings' in request.path %}
             text-blue-600
             {% else %}
             text-gray-500

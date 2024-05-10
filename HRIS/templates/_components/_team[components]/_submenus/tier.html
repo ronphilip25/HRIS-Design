@@ -1,0 +1,68 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% include '_components/header.html' %}
+
+{% block title %} Tier | Geopro {% endblock %}
+
+{% block content %} 
+
+{% include '_components/_team[components]/_widget/widgets2.html' %}
+
+<div class="container mx-auto mt-3">
+  <div class="flex items-center justify-between">
+    <h5 class="font-bold text-gray-700 text-2xl">Tier</h5>
+    <button
+      class="rounded-lg bg-blue-600 w-[115px] h-[47px] mt-3 text-white font-sans text-base font-bold"
+    >
+      Add Tier
+    </button>
+  </div>
+
+  <div class="grid grid-cols-4 gap-6 mt-5 h-[346px]">
+    <div class="col-span-4 rounded-lg bg-white shadow-md">
+      <h6 class="p-5 mt-3 font-sans text-xl font-bold text-gray-700">Title</h6>
+      <div class="ml-6 mr-6 border-b border-blue-900"></div>
+      <div class="p-5">
+        <ul class="ml-5">
+            <li class="mt-2 text-start text-xl">
+              <div class="flex justify-between mt-3 items-center">
+                <div class="flex items-start justify-between">
+                  <span class="font-sans text-base font-bold text-gray-700 ">Annabel Calbang (0)</span>
+                </div>
+                <div class="flex justify-end gap-2 ">
+                  <button class="h-[44px] w-[75px] rounded-lg  bg-blue-500 text-sm font-bold text-white shadow-lg">Edit</button>
+                  <button class="h-[44px] w-[93px] rounded-lg bg-red-600 text-sm font-bold text-white shadow-lg">Delete</button>
+                </div>
+              </div>
+            </li>
+            <li class="mt-10 text-start text-xl">
+              <div class="flex justify-between mt-3 items-center">
+                <div class="flex items-start justify-between">
+                  <span class="font-sans text-base font-bold text-gray-700">Team Lead (1)</span>
+                </div>
+                <div class="flex justify-end gap-2 ">
+                  <button class="h-[44px] w-[75px] rounded-lg  bg-blue-500 text-sm font-bold text-white shadow-lg">Edit</button>
+                  <button class="h-[44px] w-[93px] rounded-lg bg-red-600 text-sm font-bold text-white shadow-lg">Delete</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </div>
+
+      <div class="flex justify-center mt-18">
+        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+        <a href="#" aria-current="page"
+            class="relative z-10 inline-flex  bg-blue-500 px-4 py-2 text-sm rounded-lg font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+        </a>
+    </div>
+
+    </div>
+  </div>
+
+  
+
+</div>
+
+{% endblock %}

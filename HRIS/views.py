@@ -365,13 +365,48 @@ def leave_setting(request):
 
 
 # Team Components
-def team(request):
-    return render(request, '_components/team.html')
+def employees(request):
+    return render(request, '_components/_team[components]/employees.html')
+
+def active(request):
+    return render(request, '_components/_team[components]/_submenus/active.html')
+
+def invited(request):
+    return render(request, '_components/_team[components]/_submenus/invited.html')
+
+def resigned(request):
+    return render(request, '_components/_team[components]/_submenus/resigned.html')
+
+def deleted(request):
+    return render(request, '_components/_team[components]/_submenus/deleted.html')
 
 def organization(request):
     return render(request, '_components/_team[components]/organization.html')
 
+def department(request):
+    return render(request, '_components/_team[components]/_submenus/department.html')
+
+def tier(request):
+    return render(request, '_components/_team[components]/_submenus/tier.html')
+
 # End Team Components
+
+
+# Filing Components
+def approval_management(request):
+    return render(request, '_components/_filing[components]/approval_management.html')
+
+def approved(request):
+    return render(request, '_components/_filing[components]/_submenus/approved.html')
+
+def pending_approval(request):
+    return render(request, '_components/_filing[components]/_submenus/pending_approval.html')
+
+def filing_settings(request):
+    return render(request, '_components/_filing[components]/filing_settings.html')
+
+
+
 
 # Settings Components
 def company_settings(request):

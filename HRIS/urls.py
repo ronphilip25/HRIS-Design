@@ -21,8 +21,24 @@ urlpatterns = [
     
     
     # Team Components
-    path('team/', views.team, name='team'),
     path('team/organization/', views.organization, name='organization'),
+    path('team/employees/', views.employees, name='employees'),
+    path("team/employees/active",views.active, name='active'),
+    path("team/employees/invited",views.invited, name='invited'),
+    path("team/employees/resigned",views.resigned, name='resigned'),
+    path("team/employees/deleted",views.deleted, name="deleted"),
+    
+    path("organization/department",views.department, name='department'),
+    path("organization/tier",views.tier, name='tier'),
+    
+    
+    # Filing Components
+    path("approval_management/",views.approval_management, name="approval_management"),
+    path("approval_management/approved",views.approved, name="approved"),
+    path("approval_management/pending_approval",views.pending_approval, name="pending_approval"),
+    
+    path("filing_settings/",views.filing_settings, name="filing_settings"),
+    
     
     # Settings Copmponents
     path('company_settings', views.company_settings, name='company_settings'),

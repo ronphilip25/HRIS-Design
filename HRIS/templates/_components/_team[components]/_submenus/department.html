@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% include '_components/header.html' %}
+
+{% block title %} Department | Geopro {% endblock %}
+
+{% block content %}
+
+{% include '_components/_team[components]/_widget/widgets2.html' %}
+
+<div class="container mx-auto mt-3">
+    <div class="flex items-center justify-between">
+        <h5 class="font-bold text-gray-700 text-2xl">Department</h5>
+        <button
+          class="rounded-lg bg-blue-600 w-[194px] h-[41px] mt-3 text-white font-sans text-xs font-bold"
+        >
+          Add / Delete Department
+        </button>
+      </div>
+    
+      <div class="grid grid-cols-4 gap-6 mt-5 h-[600px]">
+        <div class=" col-span-4 rounded-lg bg-white shadow-md">
+          <h6 class="p-5 mt-3 font-sans text-xl font-bold text-gray-700">
+            Geopro Global Solutions Inc.
+          </h6>
+          <div class="ml-6 mr-6 border-b border-blue-900"></div>
+          <div class="p-5">
+            <details>
+              <summary class="list-disc text-gray-700 text-sm font-sans font-bold">
+                Geopro Global Solutions Inc. (0)
+              </summary>
+              <ul class="list-disc [&>li]:ml-8 text-sm text-gray-700 font-normal">
+                <li>
+                  <details class="appearance-none">
+                    <summary class="list-none">Human Resource (0)</summary>
+                    <ul class="list-disc [&>li]:ml-4">
+                      <li>Admin Department (0)</li>
+                    </ul>
+                  </details>
+                </li>
+                <li>Marketing Department (4)</li>
+                <li>IT Department (2)</li>
+              </ul>
+            </details>
+          </div>
+        </div> 
+</div>
+
+</div>
+
+{% endblock %}

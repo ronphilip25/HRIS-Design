@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% include '_components/header.html'%} 
+
+{% block title %} Employees | Geopro {% endblock %} {% block content %}
+
+{% include '_components/_team[components]/_widget/widgets.html' %}
+
+{% endblock %}
